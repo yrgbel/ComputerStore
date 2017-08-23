@@ -1,0 +1,71 @@
+﻿<div class="container">
+    <div class="row justify-content-end">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <div ngbDropdown class="d-inline">
+                    <button class="btn custom-dropdown-menu-btn" id="dropdownBasic1" ngbDropdownToggle>CONTACT US</button>
+                    <div class="custom-list-dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button class="custom-dropdown-menu dropdown-item">Action - 1</button>
+                        <button class="custom-dropdown-menu dropdown-item">Another Action</button>
+                        <button class="custom-dropdown-menu dropdown-item">Something else is here</button>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <div ngbDropdown class="d-inline">
+                    <button class="btn custom-dropdown-menu-btn" id="dropdownBasic1" ngbDropdownToggle>HELP & SERVICES</button>
+                    <div class="custom-list-dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button class="custom-dropdown-menu dropdown-item">Action - 1</button>
+                        <button class="custom-dropdown-menu dropdown-item">Another Action</button>
+                        <button class="custom-dropdown-menu dropdown-item">Something else is here</button>
+                    </div>
+                </div>
+                <
+            </li>
+        </ul>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+
+            <li class="nav-item dropdown" ngbDropdown>
+                <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown link
+                </a>
+                <div class="dropdown-menu custom-list-dropdown-menu" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink">
+                    <a class="custom-dropdown-menu dropdown-item" href="#">Action</a>
+                    <a class="custom-dropdown-menu dropdown-item" href="#">Another action</a>
+                    <a class="custom-dropdown-menu dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+            <div ngbDropdown class="d-inline-block">
+                <button class="btn custom-dropdown-menu-btn" id="dropdownBasic1" ngbDropdownToggle>HELP & SERVICES</button>
+                <div class="custom-list-dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button class="custom-dropdown-menu dropdown-item">Action - 1</button>
+                    <button class="custom-dropdown-menu dropdown-item">Another Action</button>
+                    <button class="custom-dropdown-menu dropdown-item">Something else is here</button>
+                </div>
+            </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<h1>Добро пожаловать {{name}}!</h1>
+<label>Введите имя:</label>
+<input [(ngModel)]="name" placeholder="name">

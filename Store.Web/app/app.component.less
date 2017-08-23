@@ -1,0 +1,32 @@
+﻿@color-selection-navs: cornflowerblue;
+@color-font-navs: whitesmoke;
+@cursor-navs: pointer;
+
+.slected-navs {
+    background-color: @color-selection-navs;
+    color: @color-font-navs;
+}
+
+.custom-dropdown-menu-btn {
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 7px;
+
+    &:focus {
+        .slected-navs;
+    }
+}
+
+.custom-dropdown-menu-btn, .custom-dropdown-menu {
+    cursor: @cursor-navs;
+}
+
+.custom-dropdown-menu {
+    &:hover {
+        .slected-navs;
+    }
+}
+
+.custom-list-dropdown-menu {
+    border-radius: 10px;
+}

@@ -1,0 +1,24 @@
+﻿.slected-navs {
+  background-color: cornflowerblue;
+  color: whitesmoke;
+}
+.custom-dropdown-menu-btn {
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 7px;
+}
+.custom-dropdown-menu-btn:focus {
+  background-color: cornflowerblue;
+  color: whitesmoke;
+}
+.custom-dropdown-menu-btn,
+.custom-dropdown-menu {
+  cursor: pointer;
+}
+.custom-dropdown-menu:hover {
+  background-color: cornflowerblue;
+  color: whitesmoke;
+}
+.custom-list-dropdown-menu {
+  border-radius: 10px;
+}
