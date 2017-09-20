@@ -8,6 +8,10 @@
 // ReSharper disable RedundantOverridenMember
 // ReSharper disable UseNameofExpression
 // TargetFrameworkVersion = 4.6
+
+using Store.Model.POCO_Entities;
+using Store.Model.POCO_Entities;
+
 #pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
 
 

@@ -102,6 +102,16 @@
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Store.Data\Store.Data.csproj">
+      <Project>{c89aaa3b-5eea-4d63-a09c-b7635c493fb8}</Project>
+      <Name>Store.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Store.Model\Store.DataModel.csproj">
+      <Project>{071a3712-6c1f-42ab-b288-dac7a7ec1230}</Project>
+      <Name>Store.DataModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

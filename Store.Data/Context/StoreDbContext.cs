@@ -10,20 +10,20 @@
 // TargetFrameworkVersion = 4.6
 
 using System.Data.Entity;
+using AutoMapper;
 using Store.Data.Context;
+using Store.Data.MappingProfiles;
+using Store.Model.POCO_Entities;
 
 #pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
 
 
 namespace Store.Data
 {
-
-    using System.Linq;
-
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.32.0.0")]
     public class StoreDbContext : System.Data.Entity.DbContext, IStoreDbContext
     {
-        public System.Data.Entity.DbSet<CusomerPhone> CusomerPhones { get; set; } // CusomerPhone
+        public System.Data.Entity.DbSet<CustomerPhone> CusomerPhones { get; set; } // CusomerPhone
         public System.Data.Entity.DbSet<Customer> Customers { get; set; } // Customer
         public System.Data.Entity.DbSet<OrderDetail> OrderDetails { get; set; } // OrderDetails
         public System.Data.Entity.DbSet<OrderProduct> OrderProducts { get; set; } // OrderProduct
@@ -35,7 +35,8 @@ namespace Store.Data
 
         static StoreDbContext()
         {
-           Database.SetInitializer<StoreDbContext>(new StoreDbInitializer());
+            Mapper.Initialize(cfg => cfg.AddProfile<MappingProfile>());
+            Database.SetInitializer<StoreDbContext>(new StoreDbInitializer());
         }
 
         public StoreDbContext()

@@ -40,9 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Repositories\ICustomerPhoneRepository.cs" />
+    <Compile Include="Repositories\ICustomerRepository.cs" />
+    <Compile Include="Repositories\IOrderDetailRepository.cs" />
+    <Compile Include="Repositories\IOrderProductRepository.cs" />
+    <Compile Include="Repositories\IProductBrandRepository.cs" />
+    <Compile Include="Repositories\IProductCategoryRepository.cs" />
+    <Compile Include="Repositories\IProductManufacturerRepository.cs" />
+    <Compile Include="Repositories\IProductRepository.cs" />
+    <Compile Include="Repositories\IProductSubCategoryRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="IStoreUow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Store.Model\Store.DataModel.csproj">
+      <Project>{071a3712-6c1f-42ab-b288-dac7a7ec1230}</Project>
+      <Name>Store.DataModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

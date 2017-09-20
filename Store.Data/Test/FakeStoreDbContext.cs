@@ -8,6 +8,10 @@
 // ReSharper disable RedundantOverridenMember
 // ReSharper disable UseNameofExpression
 // TargetFrameworkVersion = 4.6
+
+using Store.Model.POCO_Entities;
+using Store.Model.POCO_Entities;
+
 #pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
 
 
@@ -19,7 +23,7 @@ namespace Store.Data
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.32.0.0")]
     public class FakeStoreDbContext : IStoreDbContext
     {
-        public System.Data.Entity.DbSet<CusomerPhone> CusomerPhones { get; set; }
+        public System.Data.Entity.DbSet<CustomerPhone> CusomerPhones { get; set; }
         public System.Data.Entity.DbSet<Customer> Customers { get; set; }
         public System.Data.Entity.DbSet<OrderDetail> OrderDetails { get; set; }
         public System.Data.Entity.DbSet<OrderProduct> OrderProducts { get; set; }
@@ -31,7 +35,7 @@ namespace Store.Data
 
         public FakeStoreDbContext()
         {
-            CusomerPhones = new FakeDbSet<CusomerPhone>("CustomerPhoneId", "CustomerId");
+            CusomerPhones = new FakeDbSet<CustomerPhone>("CustomerPhoneId", "CustomerId");
             Customers = new FakeDbSet<Customer>("CustomerId");
             OrderDetails = new FakeDbSet<OrderDetail>("OrderProductId", "ProductId");
             OrderProducts = new FakeDbSet<OrderProduct>("OrderProductId");

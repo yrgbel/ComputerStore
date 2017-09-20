@@ -1,0 +1,205 @@
+﻿@color-menu: #1A3668;
+@color-categories: #285E8E ;
+body {
+    font-family: "RalewayRegular", sans-serif;
+    font-size: 16px;
+    min-width: 320px;
+}
+
+
+/*BUTTONS*/
+.my_btn {
+    background-color: @color-menu;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+}
+
+.my_btn:hover {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+
+.btn_md {
+    padding: 10px 30px;
+}
+
+/*HEADER*/
+header {
+    height: 60px;
+    /*background-image: url('images/banner.jpg');*/
+    background-color: #fff;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+nav {
+    height: 94px;
+    line-height: 94px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.menu {
+    /*list-style-type: none;*/
+    margin: 0;
+    padding: 0;
+}
+
+/*.menu li {
+    display: inline-block;
+    padding: 0 30px;
+}*/
+
+.menu > li > a:hover, .nav > li > a:focus {
+    /*text-decoration: none;*/
+    background-color: @color-menu;
+    color: #FFF;
+}
+
+.menu li a {
+    color: #666666;
+    text-transform: uppercase;
+    font-family: 'RalewayBold', sans-serif;
+}
+
+.menu li a:hover,
+.menu li a:focus {
+    background-color: @color-menu;
+    text-decoration: none;
+}
+
+.nav .open > a, .nav .open > a:hover,
+.nav .open > a:focus {
+    background-color: @color-menu;
+    border-color: @color-menu;
+    color: #fff;
+}
+
+.search_panel
+{
+    min-width: 30px;
+    margin: 0 0;
+}
+
+#bootstrap-overrides .search_box {
+    width: 50%;
+    margin: 0 5px;
+}
+
+#bootstrap-overrides div.form-group {
+    display: block;
+}
+
+.navbar-nav > li > a {
+     padding-top: 5px; 
+     padding-bottom: 5px; 
+}
+
+.item_divider {
+    display: none;
+}
+
+.navbar-brand {
+    height: auto;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: @color-menu;
+    background-image: -webkit-linear-gradient(top, @color-menu 0%, @color-menu 100%);
+    background-image: -o-linear-gradient(top, @color-menu 0%, @color-menu 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@color-menu), to(@color-menu));
+    background-image: linear-gradient(to bottom, @color-menu 0%, @color-menu 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
+    background-repeat: repeat-x;
+    color: #fff;
+}
+
+.dropdown-menu > li > a:focus {
+    background-color: @color-menu;
+}
+
+.dropdown-menu .divider {
+    margin: 0 0;
+}
+
+.top_line {
+    height: 1px;
+    background-color: #666666;
+}
+
+.logo {
+    padding-top: 5px;
+}
+
+.title_block {
+    color: #666666;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.title_block h1 {
+    font-size: 50px;
+    font-family: 'RalewayBold', sans-serif;
+    margin-bottom: 30px;
+}
+
+.title_block p {
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.user-icon
+{
+    padding-right: 0.2em;
+}
+
+/*--->PARAMETRS SECTION*/
+.params_s {
+    padding: 95px 0;
+}
+
+.param_block {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.param_block i {
+    font-size: 70px;
+    color: #e84545;
+}
+
+.param_block h3 {
+    text-transform: uppercase;
+    font-family: "RalewayBold", sans-serif;
+    font-size: 18px;
+}
+
+.categories_img
+{
+    display: inline-block;
+    width: 80px;
+}
+
+.param_block:hover > h3 > a {
+    cursor: pointer;
+    text-decoration: none;
+    color: saturate(lighten(@color-categories, 5%), 20%);
+}
+
+.param_block > h3 > a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+#bootstrap-overrides .param_block > h3 {
+    margin-top: 0;
+}
+.param_block:hover .categories_fill {
+    fill: saturate(lighten(@color-categories, 5%), 20%);
+}
+
+/*<---PARAMETRS SECTION*/

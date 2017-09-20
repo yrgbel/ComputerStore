@@ -8,6 +8,10 @@
 // ReSharper disable RedundantOverridenMember
 // ReSharper disable UseNameofExpression
 // TargetFrameworkVersion = 4.6
+
+using Store.Model.POCO_Entities;
+using Store.Model.POCO_Entities;
+
 #pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
 
 
@@ -16,7 +20,7 @@ namespace Store.Data
 
     public interface IStoreDbContext : System.IDisposable
     {
-        System.Data.Entity.DbSet<CusomerPhone> CusomerPhones { get; set; } // CusomerPhone
+        System.Data.Entity.DbSet<CustomerPhone> CusomerPhones { get; set; } // CusomerPhone
         System.Data.Entity.DbSet<Customer> Customers { get; set; } // Customer
         System.Data.Entity.DbSet<OrderDetail> OrderDetails { get; set; } // OrderDetails
         System.Data.Entity.DbSet<OrderProduct> OrderProducts { get; set; } // OrderProduct

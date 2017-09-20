@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Store.Model.POCO_Entities;
 
 namespace Store.Data.Contracts
 {
@@ -15,8 +11,15 @@ namespace Store.Data.Contracts
         void Commit();
 
         // Repositories
-        //IPersonsRepository Persons { get; }
-        //IRepository<Room> Rooms { get; }
+        IRepository<CustomerPhone> CustomerPhone { get; }
+        IRepository<Customer> Rooms { get; }
+        IRepository<OrderDetail> OrderDetail { get; }
+        IRepository<OrderProduct> OrderProduct { get; }
+        IRepository<ProductBrand> ProductBrand { get; }
+        IRepository<ProductCategory> ProductCategory { get; }
+        IRepository<ProductManufacturer> ProductManufacturer { get; }
+        IRepository<Product> Product { get; }
+        IRepository<ProductSubCategory> ProductSubCategory { get; }
         //ISessionsRepository Sessions { get; }
         //IRepository<TimeSlot> TimeSlots { get; }
         //IRepository<Track> Tracks { get; }

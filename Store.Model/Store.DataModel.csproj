@@ -40,15 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="POCO Entities\CusomerPhone.cs" />
-    <Compile Include="POCO Entities\Customer.cs" />
-    <Compile Include="POCO Entities\OrderDetail.cs" />
-    <Compile Include="POCO Entities\OrderProduct.cs" />
-    <Compile Include="POCO Entities\Product.cs" />
-    <Compile Include="POCO Entities\ProductBrand.cs" />
-    <Compile Include="POCO Entities\ProductCategory.cs" />
-    <Compile Include="POCO Entities\ProductManufacturer.cs" />
-    <Compile Include="POCO Entities\ProductSubCategory.cs" />
+    <Compile Include="POCO_Entities\CustomerPhone.cs" />
+    <Compile Include="POCO_Entities\Customer.cs" />
+    <Compile Include="POCO_Entities\OrderDetail.cs" />
+    <Compile Include="POCO_Entities\OrderProduct.cs" />
+    <Compile Include="POCO_Entities\Product.cs" />
+    <Compile Include="POCO_Entities\ProductBrand.cs" />
+    <Compile Include="POCO_Entities\ProductCategory.cs" />
+    <Compile Include="POCO_Entities\ProductManufacturer.cs" />
+    <Compile Include="POCO_Entities\ProductSubCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
