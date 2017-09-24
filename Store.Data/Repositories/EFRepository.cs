@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Threading.Tasks;
 using Store.Data.Contracts;
 
 namespace Store.Data.Repositories
@@ -33,6 +34,11 @@ namespace Store.Data.Repositories
         {
             //return DbSet.FirstOrDefault(PredicateBuilder.GetByIdPredicate<T>(id));
             return DbSet.Find(id);
+        }
+
+        public Task<T> GetByIdAsync(int id)
+        {
+            return DbSet.FindAsync(id);
         }
 
         public virtual void Add(T entity)

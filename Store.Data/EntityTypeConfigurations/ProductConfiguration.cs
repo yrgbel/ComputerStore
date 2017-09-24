@@ -43,6 +43,7 @@ namespace Store.Data
             Property(x => x.ProductSubCategoryId).HasColumnName(@"ProductSubCategoryId").HasColumnType("int").IsRequired();
             Property(x => x.ProductCategoryId).HasColumnName(@"ProductCategoryId").HasColumnType("int").IsRequired();
             Property(x => x.ProductDiscount).HasColumnName(@"ProductDiscount").HasColumnType("int").IsOptional();
+            Property(x => x.ProductImageMimeType).HasColumnName(@"ProductImageMimeType").HasColumnType("nvarchar").HasMaxLength(15).IsOptional();
 
             // Foreign keys
             HasOptional(a => a.ProductBrand).WithMany(b => b.Products).HasForeignKey(c => c.ProductBrandId).WillCascadeOnDelete(false); // ProductBrand_Product

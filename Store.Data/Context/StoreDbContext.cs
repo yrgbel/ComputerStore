@@ -10,9 +10,9 @@
 // TargetFrameworkVersion = 4.6
 
 using System.Data.Entity;
-using AutoMapper;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Store.Data.Context;
-using Store.Data.MappingProfiles;
+using Store.Data.IdentityModels;
 using Store.Model.POCO_Entities;
 
 #pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
@@ -21,7 +21,7 @@ using Store.Model.POCO_Entities;
 namespace Store.Data
 {
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.32.0.0")]
-    public class StoreDbContext : System.Data.Entity.DbContext, IStoreDbContext
+    public class StoreDbContext : IdentityDbContext<ApplicationUser>, IStoreDbContext
     {
         public System.Data.Entity.DbSet<CustomerPhone> CusomerPhones { get; set; } // CusomerPhone
         public System.Data.Entity.DbSet<Customer> Customers { get; set; } // Customer
@@ -35,17 +35,16 @@ namespace Store.Data
 
         static StoreDbContext()
         {
-            Mapper.Initialize(cfg => cfg.AddProfile<MappingProfile>());
             Database.SetInitializer<StoreDbContext>(new StoreDbInitializer());
         }
 
         public StoreDbContext()
-            : base("Name=Store")
+            : base("Name=StoreConnection", throwIfV1Schema: false)
         {
         }
 
         public StoreDbContext(string connectionString)
-            : base(connectionString)
+            : base(connectionString, throwIfV1Schema: false)
         {
         }
 
@@ -76,6 +75,11 @@ namespace Store.Data
             if (nullableValue != null)
                 return nullableValue.IsNull;
             return (sqlValue == null || sqlValue == System.DBNull.Value);
+        }
+
+        public static StoreDbContext Create()
+        {
+            return new StoreDbContext();
         }
 
         protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)

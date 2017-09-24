@@ -29,11 +29,11 @@ namespace Store.Data
 
         public CusomerPhoneConfiguration(string schema)
         {
-            ToTable("CusomerPhone", schema);
+            ToTable("CustomerPhone", schema);
             HasKey(x => new { x.CustomerPhoneId, x.CustomerId });
 
             Property(x => x.CustomerId).HasColumnName(@"CustomerId").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None);
-            Property(x => x.CustomerPhoneNumber).HasColumnName(@"CustomerPhoneNumber").HasColumnType("varchar").IsOptional().IsUnicode(false).HasMaxLength(10);
+            Property(x => x.CustomerPhoneNumber).HasColumnName(@"CustomerPhoneNumber").HasColumnType("varchar").IsOptional().IsUnicode(false).HasMaxLength(15);
             Property(x => x.CustomerPhoneId).HasColumnName(@"CustomerPhoneId").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
 
             // Foreign keys

@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using Store.Data.Contracts.Repositories;
 using Store.Model.POCO_Entities;
 using Store.Model.POCO_Entities;
 

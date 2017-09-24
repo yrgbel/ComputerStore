@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 
 namespace Store.Data.Contracts
 {
@@ -6,6 +7,7 @@ namespace Store.Data.Contracts
     {
         IQueryable<T> GetAll();
         T GetById(int id);
+        Task<T> GetByIdAsync(int id);
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);

@@ -14,34 +14,24 @@ namespace Store.DomainModel.DTOs
         public int ProductSubCategoryId { get; set; }
         public int ProductCategoryId { get; set; }
         public int? ProductDiscount { get; set; }
-
-        // Reverse navigation
-
-        /// <summary>
-        /// Child OrderDetails where [OrderDetails].[ProductId] point to this entity (Product_OrderDetails)
-        /// </summary>
-        public virtual System.Collections.Generic.ICollection<OrderDetailDto> OrderDetails { get; set; } // OrderDetails.Product_OrderDetails
-
-        // Foreign keys
+        public string ProductImageMimeType { get; set; }
 
         /// <summary>
         /// Parent ProductBrand pointed by [Product].([ProductBrandId]) (ProductBrand_Product)
         /// </summary>
-        public virtual ProductBrandDto ProductBrand { get; set; } // ProductBrand_Product
+        //public string ProductBrandName { get; set; }
+        //public string ProductBrandCountry { get; set; }
+        public ProductBrandDto ProductBrand { get; set; }
 
         /// <summary>
         /// Parent ProductManufacturer pointed by [Product].([ProductManufacturerId]) (ProductManufacterer_Product)
         /// </summary>
-        public virtual ProductManufacturerDto ProductManufacturer { get; set; } // ProductManufacterer_Product
+        public string ProductManufacturerCountry { get; set; }
 
         /// <summary>
         /// Parent ProductSubCategory pointed by [Product].([ProductSubCategoryId], [ProductCategoryId]) (ProductSubCategory_Product)
         /// </summary>
-        public virtual ProductSubCategoryDto ProductSubCategory { get; set; } // ProductSubCategory_Product
-
-        public ProductDto()
-        {
-            OrderDetails = new System.Collections.Generic.List<OrderDetailDto>();
-        }
+        public string ProductSubCategoryName { get; set; }
+        public string ProductCategoryName { get; set; }
     }
 }

@@ -13,10 +13,13 @@ namespace Store.Web.Mvc.Client
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: null,
-                url: "",
-                defaults: new { controller = "Main", action = "Index" }
+            routes.MapRoute(null,
+                "",
+                new
+                {
+                    controller = "Product",
+                    action = "Index"
+                }
             );
         }
     }

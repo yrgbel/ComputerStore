@@ -6,9 +6,8 @@ using System.Web.Mvc;
 
 namespace Store.Web.Mvc.Client.Controllers
 {
-    public class MainController : Controller
+    public class ProductController : Controller
     {
-        // GET: Main
         public ActionResult Index()
         {
             return View();
