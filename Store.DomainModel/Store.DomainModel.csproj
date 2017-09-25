@@ -42,15 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTOs\CusomerPhoneDto.cs" />
     <Compile Include="DTOs\CustomerDto.cs" />
     <Compile Include="DTOs\OrderDetailDto.cs" />
     <Compile Include="DTOs\OrderProductDto.cs" />
     <Compile Include="DTOs\ProductDto.cs" />
-    <Compile Include="DTOs\ProductBrandDto.cs" />
-    <Compile Include="DTOs\ProductCategoryDto.cs" />
-    <Compile Include="DTOs\ProductManufacturerDto.cs" />
-    <Compile Include="DTOs\ProductSubCategoryDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

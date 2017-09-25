@@ -9,7 +9,7 @@ namespace Store.Data.MappingProfiles
         public MappingProfile()
         {
             // Domain to Dto
-            CreateMap<CustomerPhone, CusomerPhoneDto>();
+            CreateMap<CustomerPhone, CustomerPhoneDto>();
             CreateMap<Customer, CustomerDto>();
             CreateMap<OrderDetail, OrderDetailDto>();
             CreateMap<OrderProduct, OrderProductDto>();
@@ -19,6 +19,12 @@ namespace Store.Data.MappingProfiles
                     dto => dto.ProductCategoryName,
                     opt => opt.MapFrom(src => src.ProductSubCategory.ProductCategory.ProductCategoryName))
                 .ForMember(
+                    dto => dto.ProductBrandName,
+                    opt => opt.MapFrom(src => src.ProductBrand.ProductBrandName))
+                .ForMember(
+                    dto => dto.ProductBrandCountry,
+                    opt => opt.MapFrom(src => src.ProductBrand.ProductBrandCountry))
+                    .ForMember(
                     dto => dto.ProductManufacturerCountry,
                     opt => opt.MapFrom(src => src.ProductManufacturer.ProductManufacturerCountry))
                 .ForMember(
@@ -31,7 +37,7 @@ namespace Store.Data.MappingProfiles
             CreateMap<ProductSubCategory, ProductSubCategoryDto>();
 
             // Dto to Domain
-            CreateMap<CusomerPhoneDto, CustomerPhone>();
+            CreateMap<CustomerPhoneDto, CustomerPhone>();
             CreateMap<CustomerDto, Customer>();
             CreateMap<OrderDetailDto, OrderDetail>();
             CreateMap<OrderProductDto, OrderProduct>();
