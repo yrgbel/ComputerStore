@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace Store.DomainModel.DTOs
 {
     public class OrderProductDto
@@ -11,13 +9,23 @@ namespace Store.DomainModel.DTOs
         public decimal OrderProductTotalPrice { get; set; }
         public int CustomerId { get; set; }
 
-        public virtual ICollection<OrderDetailDto> OrderDetails { get; set; } // OrderDetails.OrderProduct_OrderDetails
+        // Reverse navigation
 
+        /// <summary>
+        /// Child OrderDetails where [OrderDetails].[OrderProductId] point to this entity (OrderProduct_OrderDetails)
+        /// </summary>
+        public virtual System.Collections.Generic.ICollection<OrderDetailDto> OrderDetails { get; set; } // OrderDetails.OrderProduct_OrderDetails
+
+        // Foreign keys
+
+        /// <summary>
+        /// Parent Customer pointed by [OrderProduct].([CustomerId]) (Customer_OrderProduct)
+        /// </summary>
         public virtual CustomerDto Customer { get; set; } // Customer_OrderProduct
 
         public OrderProductDto()
         {
-            OrderDetails = new List<OrderDetailDto>();
+            OrderDetails = new System.Collections.Generic.List<OrderDetailDto>();
         }
     }
 }

@@ -19,8 +19,9 @@ namespace Store.DomainModel.DTOs
         /// <summary>
         /// Parent ProductBrand pointed by [Product].([ProductBrandId]) (ProductBrand_Product)
         /// </summary>
-        public string ProductBrandName { get; set; }
-        public string ProductBrandCountry { get; set; }
+        //public string ProductBrandName { get; set; }
+        //public string ProductBrandCountry { get; set; }
+        public ProductBrandDto ProductBrand { get; set; }
 
         /// <summary>
         /// Parent ProductManufacturer pointed by [Product].([ProductManufacturerId]) (ProductManufacterer_Product)

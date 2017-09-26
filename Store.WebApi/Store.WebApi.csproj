@@ -175,12 +175,14 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Api\ApiControllerBase.cs" />
     <Compile Include="Controllers\OData\ODataControllerBase.cs" />
     <Compile Include="Controllers\OData\ProductBrandsController.cs" />
     <Compile Include="Controllers\OData\ProductCategoriesController.cs" />
     <Compile Include="Controllers\OData\ProductManufacturersController.cs" />
     <Compile Include="Controllers\OData\ProductsController.cs" />
     <Compile Include="Controllers\OData\ProductSubCategoriesController.cs" />
+    <Compile Include="Controllers\Api\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
