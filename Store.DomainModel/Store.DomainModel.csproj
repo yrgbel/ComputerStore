@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTOs\CusomerPhoneDto.cs" />
+    <Compile Include="DTOs\CustomerPhoneDto.cs" />
     <Compile Include="DTOs\CustomerDto.cs" />
     <Compile Include="DTOs\OrderDetailDto.cs" />
     <Compile Include="DTOs\OrderProductDto.cs" />

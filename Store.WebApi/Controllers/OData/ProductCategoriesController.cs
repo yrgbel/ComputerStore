@@ -12,6 +12,7 @@ using Store.Model.POCO_Entities;
 
 namespace Store.WebApi.Controllers.OData
 {
+    //[Authorize]
     public class ProductCategoriesController : ODataControllerBase
     {
         public ProductCategoriesController(IStoreUow uow)
@@ -26,7 +27,7 @@ namespace Store.WebApi.Controllers.OData
         }
 
         [EnableQuery]
-        public IQueryable<ProductCategoryDto> Get()
+        public IQueryable<ProductCategoryDto> GetProductCategories()
         {
             return Uow.ProductCategories.GetAll()
                 .OrderBy(p => p.ProductCategoryName)
@@ -34,7 +35,7 @@ namespace Store.WebApi.Controllers.OData
         }
         
         [EnableQuery]
-        public async Task<IHttpActionResult> Get([FromODataUri] int key)
+        public async Task<IHttpActionResult> GetProductCategory([FromODataUri] int key)
         {
             var result = await Uow.ProductCategories.GetByIdAsync(key);
 
@@ -44,7 +45,9 @@ namespace Store.WebApi.Controllers.OData
             return Ok(Mapper.Map<ProductCategoryDto>(result));
         }
 
-        public async Task<IHttpActionResult> Post(ProductCategoryDto productCategoryDto)
+        [HttpPost]
+        [Authorize(Roles = "Admin, Moderator")]
+        public async Task<IHttpActionResult> CreateProductCategory(ProductCategoryDto productCategoryDto)
         {
             if (!ModelState.IsValid)
             {
@@ -58,7 +61,9 @@ namespace Store.WebApi.Controllers.OData
             return Created(productCategoryDto);
         }
 
-        public async Task<IHttpActionResult> Patch([FromODataUri] int key, Delta<ProductCategoryDto> productCategoryDto)
+        [HttpPatch]
+        [Authorize(Roles = "Admin, Moderator")]
+        public async Task<IHttpActionResult> UpdateProductCategory([FromODataUri] int key, Delta<ProductCategoryDto> productCategoryDto)
         {
             if (!ModelState.IsValid)
             {
@@ -92,37 +97,8 @@ namespace Store.WebApi.Controllers.OData
             return Updated(entity);
         }
 
-        public async Task<IHttpActionResult> Put([FromODataUri] int key, ProductCategoryDto updateDto)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (key != updateDto.ProductCategoryId)
-            {
-                return BadRequest();
-            }
-
-            try
-            {
-                Uow.ProductCategories.Update(Mapper.Map<ProductCategory>(updateDto));
-                await Uow.CommitAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProductCategoryExists(key))
-                {
-                    return NotFound();
-                }
-
-                throw;
-            }
-
-            return Updated(updateDto);
-        }
-
-        public async Task<IHttpActionResult> Delete([FromODataUri] int key)
+        [Authorize(Roles = "Admin, Moderator")]
+        public async Task<IHttpActionResult> DeleteProductCategory([FromODataUri] int key)
         {
             var productCategoryEntity = await Uow.ProductCategories.GetByIdAsync(key);
 

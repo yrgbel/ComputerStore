@@ -12,6 +12,7 @@ using Store.Model.POCO_Entities;
 
 namespace Store.WebApi.Controllers.OData
 {
+    //[Authorize]
     public class ProductBrandsController : ODataControllerBase
     {
         public ProductBrandsController(IStoreUow uow)
@@ -25,16 +26,18 @@ namespace Store.WebApi.Controllers.OData
                 .Any(p => p.ProductBrandId == key);
         }
 
+        
         [EnableQuery]
-        public IQueryable<ProductBrandDto> Get()
+        public IQueryable<ProductBrandDto> GetProductBrands()
         {
             return Uow.ProductBrands.GetAll()
                 .OrderBy(p => p.ProductBrandName)
                 .ProjectTo<ProductBrandDto>();//use Automapper.QueryableExtension namespace
         }
 
+        
         [EnableQuery]
-        public async Task<IHttpActionResult> Get([FromODataUri] int key)
+        public async Task<IHttpActionResult> GetProductBrand([FromODataUri] int key)
         {
             var result = await Uow.ProductBrands.GetByIdAsync(key);
 
@@ -44,7 +47,9 @@ namespace Store.WebApi.Controllers.OData
             return Ok(Mapper.Map<ProductBrandDto>(result));
         }
 
-        public async Task<IHttpActionResult> Post(ProductBrandDto productBrandDto)
+        [HttpPost]
+        [Authorize(Roles = "Admin, Moderator")]
+        public async Task<IHttpActionResult> CreateProductBrand(ProductBrandDto productBrandDto)
         {
             if (!ModelState.IsValid)
             {
@@ -58,7 +63,9 @@ namespace Store.WebApi.Controllers.OData
             return Created(productBrandDto);
         }
 
-        public async Task<IHttpActionResult> Patch([FromODataUri] int key, Delta<ProductBrandDto> productBrandDto)
+        [HttpPatch]
+        [Authorize(Roles = "Admin, Moderator")]
+        public async Task<IHttpActionResult> UpdateProductBrand([FromODataUri] int key, Delta<ProductBrandDto> productBrandDto)
         {
             if (!ModelState.IsValid)
             {
@@ -91,37 +98,9 @@ namespace Store.WebApi.Controllers.OData
 
             return Updated(Mapper.Map<ProductBrandDto>(entity));
         }
-        public async Task<IHttpActionResult> Put([FromODataUri] int key, ProductBrandDto updateDto)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
 
-            if (key != updateDto.ProductBrandId)
-            {
-                return BadRequest();
-            }
-
-            try
-            {
-                Uow.ProductBrands.Update(Mapper.Map<ProductBrand>(updateDto));
-                await Uow.CommitAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProductBrandExists(key))
-                {
-                    return NotFound();
-                }
-
-                throw;
-            }
-
-            return Updated(updateDto);
-        }
-
-        public async Task<IHttpActionResult> Delete([FromODataUri] int key)
+        [Authorize(Roles = "Admin, Moderator")]
+        public async Task<IHttpActionResult> DeleteProductBrand([FromODataUri] int key)
         {
             var productBrandEntity = await Uow.ProductBrands.GetByIdAsync(key);
 

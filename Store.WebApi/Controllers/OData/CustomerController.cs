@@ -13,79 +13,75 @@ using Store.Model.POCO_Entities;
 
 namespace Store.WebApi.Controllers.OData
 {
-    //[Authorize]
-    public class ProductsController : ODataControllerBase
+    public class CustomerController : ODataControllerBase
     {
-        public ProductsController(IStoreUow uow)
+        public CustomerController(IStoreUow uow)
         {
             Uow = uow;
         }
 
-        private bool ProductExists(int key)
+        private bool CustomerExists(int key)
         {
-            return Uow.Products.GetAll()
-                .Any(p => p.ProductId == key);
+            return Uow.Customers.GetAll()
+                .Any(p => p.CustomerId == key);
         }
 
         [EnableQuery]
-        public IQueryable<ProductDto> GetProducts()
+        public IQueryable<ProductDto> GetCustomers()
         {
-            var dbset = (DbSet<Product>)Uow.Products.GetAll();
+            var dbset = (DbSet<Customer>)Uow.Customers.GetAll();
             // add eager loading
             return dbset
-                .Include(p => p.ProductBrand)
-                .Include(p => p.ProductManufacturer)
-                .Include(p => p.ProductSubCategory)
-                .Include(p => p.ProductSubCategory.ProductCategory)
-                .OrderBy(p => p.ProductName)
+                .Include(c => c.CusomerPhones)
+                .OrderBy(p => p.CustomerName)
                 .ProjectTo<ProductDto>();//use Automapper.QueryableExtension namespace
         }
 
         [EnableQuery]
-        public async Task<IHttpActionResult> GetProduct([FromODataUri] int key)
+        public async Task<IHttpActionResult> GetCustomer([FromODataUri] int key)
         {
-            var result = await Uow.Products.GetByIdAsync(key);
+            var result = await Uow.Customers.GetByIdAsync(key);
 
             if (result == null)
                 return NotFound();
 
-            return Ok(Mapper.Map<ProductDto>(result));
+            return Ok(Mapper.Map<CustomerDto>(result));
         }
 
         [HttpPost]
         [Authorize(Roles = "Admin, Moderator")]
-        public async Task<IHttpActionResult> CreateProduct(ProductDto productDto)
+        public async Task<IHttpActionResult> CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var productEntity = Mapper.Map<Product>(productDto);
-            Uow.Products.Add(productEntity);
+            var customerEntity = Mapper.Map<Customer>(customerDto);
+            Uow.Customers.Add(customerEntity);
             await Uow.CommitAsync();
 
-            return Created(Mapper.Map<ProductDto>(productEntity));
+            return Created(Mapper.Map<CustomerDto>(customerEntity));
         }
 
         [HttpPatch]
         [Authorize(Roles = "Admin, Moderator")]
-        public async Task<IHttpActionResult> UpdateProduct([FromODataUri] int key, Delta<ProductDto> productDto)
+        public async Task<IHttpActionResult> UpdateCustomer([FromODataUri] int key, Delta<CustomerDto> customerDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var entity = await Uow.Products.GetByIdAsync(key);
+            var entity = await Uow.Customers.GetByIdAsync(key);
 
             if (entity == null)
             {
                 return NotFound();
             }
 
-            var productEntity = Mapper.Map<Delta<Product>>(productDto);
-            productEntity.Patch(entity);
+            var customerEntity = Mapper.Map<Delta<Customer>>(customerDto);
+            customerEntity.Patch(entity);
 
             try
             {
@@ -93,7 +89,7 @@ namespace Store.WebApi.Controllers.OData
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProductExists(key))
+                if (!CustomerExists(key))
                 {
                     return NotFound();
                 }
@@ -104,16 +100,16 @@ namespace Store.WebApi.Controllers.OData
         }
 
         [Authorize(Roles = "Admin, Moderator")]
-        public async Task<IHttpActionResult> DeleteProduct([FromODataUri] int key)
+        public async Task<IHttpActionResult> DeleteCustomer([FromODataUri] int key)
         {
-            var product = await Uow.Products.GetByIdAsync(key);
+            var customer = await Uow.Customers.GetByIdAsync(key);
 
-            if (product == null)
+            if (customer == null)
             {
                 return NotFound();
             }
 
-            Uow.Products.Delete(product);
+            Uow.Customers.Delete(customer);
             await Uow.CommitAsync();
 
             return StatusCode(HttpStatusCode.NoContent);

@@ -13,6 +13,7 @@ using Store.Model.POCO_Entities;
 
 namespace Store.WebApi.Controllers.OData
 {
+    //[Authorize]
     public class ProductManufacturersController : ODataControllerBase
     {
         public ProductManufacturersController(IStoreUow uow)
@@ -27,7 +28,7 @@ namespace Store.WebApi.Controllers.OData
         }
 
         [EnableQuery]
-        public IQueryable<ProductManufacturerDto> Get()
+        public IQueryable<ProductManufacturerDto> GetProductManufacturers()
         {
             return Uow.ProductManufacturers.GetAll()
                 .OrderBy(p => p.ProductManufacturerCountry)
@@ -35,7 +36,7 @@ namespace Store.WebApi.Controllers.OData
         }
 
         [EnableQuery]
-        public async Task<IHttpActionResult> Get([FromODataUri] int key)
+        public async Task<IHttpActionResult> GetProductManufacturer([FromODataUri] int key)
         {
             var result = await Uow.ProductManufacturers.GetByIdAsync(key);
 
@@ -45,7 +46,9 @@ namespace Store.WebApi.Controllers.OData
             return Ok(Mapper.Map<ProductManufacturerDto>(result));
         }
 
-        public async Task<IHttpActionResult> Post(ProductManufacturerDto productManufacturerDto)
+        [HttpPost]
+        [Authorize(Roles = "Admin, Moderator")]
+        public async Task<IHttpActionResult> CreateProductManufacturer(ProductManufacturerDto productManufacturerDto)
         {
             if (productManufacturerDto == null) throw new ArgumentNullException(nameof(productManufacturerDto));
             if (!ModelState.IsValid)
@@ -60,7 +63,9 @@ namespace Store.WebApi.Controllers.OData
             return Created(productManufacturerDto);
         }
 
-        public async Task<IHttpActionResult> Patch([FromODataUri] int key, Delta<ProductManufacturerDto> productManufacturerDto)
+        [HttpPatch]
+        [Authorize(Roles = "Admin, Moderator")]
+        public async Task<IHttpActionResult> UpdateProductManufacturer([FromODataUri] int key, Delta<ProductManufacturerDto> productManufacturerDto)
         {
             if (!ModelState.IsValid)
             {
@@ -94,37 +99,8 @@ namespace Store.WebApi.Controllers.OData
             return Updated(entity);
         }
 
-        public async Task<IHttpActionResult> Put([FromODataUri] int key, ProductManufacturerDto updateDto)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (key != updateDto.ProductManufacturerId)
-            {
-                return BadRequest();
-            }
-
-            try
-            {
-                Uow.ProductManufacturers.Update(Mapper.Map<ProductManufacturer>(updateDto));
-                await Uow.CommitAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProductManufacturerExists(key))
-                {
-                    return NotFound();
-                }
-
-                throw;
-            }
-
-            return Updated(updateDto);
-        }
-
-        public async Task<IHttpActionResult> Delete([FromODataUri] int key)
+        [Authorize(Roles = "Admin, Moderator")]
+        public async Task<IHttpActionResult> DeleteProductManufacturer([FromODataUri] int key)
         {
             var productManufacturerEntity = await Uow.ProductManufacturers.GetByIdAsync(key);
 
