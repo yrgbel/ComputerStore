@@ -168,6 +168,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\dreamstore.mdf" />
+    <Content Include="App_Data\dreamstore_log.ldf">
+      <DependentUpon>dreamstore.mdf</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -200,7 +204,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Models\" />
   </ItemGroup>

@@ -18,9 +18,6 @@ namespace Store.DomainModel.DTOs
         public int? ProductDiscount { get; set; } // ProductDiscount
         public string ProductImageMimeType { get; set; } // ProductImageMimeType
         public virtual ICollection<OrderDetailDto> OrderDetails { get; set; } // OrderDetails.Product_OrderDetails
-        public virtual ProductBrandDto ProductBrand { get; set; } // ProductBrand_Product
-        public virtual ProductManufacturerDto ProductManufacturer { get; set; } // ProductManufacterer_Product
-        public virtual ProductSubCategoryDto ProductSubCategory { get; set; } // ProductSubCategory_Product
 
         public ProductDto()
         {

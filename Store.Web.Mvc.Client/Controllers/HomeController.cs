@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Store.Web.Mvc.Client.Controllers
 {
-    public class ProductController : Controller
+    public class HomeController : Controller
     {
         public ActionResult Index()
         {

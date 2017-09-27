@@ -15,8 +15,13 @@ namespace Store.Data.MappingProfiles
                 .ForMember(dto => dto.OrderProducts, opt => opt.Ignore());
 
             CreateMap<OrderDetail, OrderDetailDto>();
-            CreateMap<OrderProduct, OrderProductDto>();
-            CreateMap<Product, ProductDto>();
+                
+            CreateMap<OrderProduct, OrderProductDto>()
+                .ForMember(dto => dto.OrderDetails, opt => opt.Ignore());
+
+            CreateMap<Product, ProductDto>()
+                .ForMember(dto => dto.OrderDetails, opt => opt.Ignore()); 
+              
             CreateMap<ProductBrand, ProductBrandDto>();
             CreateMap<ProductCategory, ProductCategoryDto>();
             CreateMap<ProductManufacturer, ProductManufacturerDto>();
