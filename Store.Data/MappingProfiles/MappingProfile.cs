@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using Store.DomainModel.DTOs;
 using Store.Model.POCO_Entities;
 
@@ -11,17 +12,24 @@ namespace Store.Data.MappingProfiles
             // Domain to Dto
             CreateMap<CustomerPhone, CustomerPhoneDto>();
 
-            CreateMap<Customer, CustomerDto>()
-                .ForMember(dto => dto.OrderProducts, opt => opt.Ignore());
+            CreateMap<Customer, CustomerDto>();
 
             CreateMap<OrderDetail, OrderDetailDto>();
                 
-            CreateMap<OrderProduct, OrderProductDto>()
-                .ForMember(dto => dto.OrderDetails, opt => opt.Ignore());
+            CreateMap<OrderProduct, OrderProductDto>();
 
-            CreateMap<Product, ProductDto>()
-                .ForMember(dto => dto.OrderDetails, opt => opt.Ignore()); 
-              
+            CreateMap<Product, ProductDetailsDto>()
+                .ForMember(dto => dto.ProductBrandCountry,
+                    cfg => cfg.MapFrom(dest => dest.ProductBrand.ProductBrandCountry))
+                .ForMember(dto => dto.ProductBrandName,
+                    cfg => cfg.MapFrom(dest => dest.ProductBrand.ProductBrandName))
+                .ForMember(dto => dto.ProductCategoryName,
+                    cfg => cfg.MapFrom(dest => dest.ProductSubCategory.ProductCategory.ProductCategoryName))
+                .ForMember(dto => dto.ProductManufacturerCountry,
+                    cfg => cfg.MapFrom(dest => dest.ProductManufacturer.ProductManufacturerCountry))
+                .ForMember(dto => dto.ProductSubCategoryName,
+                    cfg => cfg.MapFrom(dest => dest.ProductSubCategory.ProductSubCategoryName));
+
             CreateMap<ProductBrand, ProductBrandDto>();
             CreateMap<ProductCategory, ProductCategoryDto>();
             CreateMap<ProductManufacturer, ProductManufacturerDto>();
@@ -32,7 +40,7 @@ namespace Store.Data.MappingProfiles
             CreateMap<CustomerDto, Customer>();
             CreateMap<OrderDetailDto, OrderDetail>();
             CreateMap<OrderProductDto, OrderProduct>();
-            CreateMap<ProductDto, Product>();
+            CreateMap<ProductDetailsDto, Product>();
             CreateMap<ProductBrandDto, ProductBrand>();
             CreateMap<ProductCategoryDto, ProductCategory>();
             CreateMap<ProductManufacturerDto, ProductManufacturer>();

@@ -28,7 +28,7 @@ namespace Store.Web.Mvc.Client.Controllers.OData
         }
 
         [EnableQuery]
-        public IQueryable<ProductDto> Get()
+        public IQueryable<ProductDetailsDto> Get()
         {
             var dbset = (DbSet<Product>)Uow.Products.GetAll();
             // add eager loading
@@ -38,7 +38,7 @@ namespace Store.Web.Mvc.Client.Controllers.OData
                 .Include(p => p.ProductSubCategory)
                 .Include(p => p.ProductSubCategory.ProductCategory)
                 .OrderBy(p => p.ProductName)
-                .ProjectTo<ProductDto>();//use Automapper.QueryableExtension namespace
+                .ProjectTo<ProductDetailsDto>();//use Automapper.QueryableExtension namespace
         }
 
         [EnableQuery]
@@ -49,12 +49,12 @@ namespace Store.Web.Mvc.Client.Controllers.OData
             if (result == null)
                 return NotFound();
 
-            return Ok(Mapper.Map<ProductDto>(result));
+            return Ok(Mapper.Map<ProductDetailsDto>(result));
         }
 
         [HttpPost]
         [Authorize(Roles = "Admin, Moderator")]
-        public async Task<IHttpActionResult> CreateProduct(ProductDto productDto)
+        public async Task<IHttpActionResult> CreateProduct(ProductDetailsDto productDto)
         {
             if (!ModelState.IsValid)
             {
@@ -65,12 +65,12 @@ namespace Store.Web.Mvc.Client.Controllers.OData
             Uow.Products.Add(productEntity);
             await Uow.CommitAsync();
 
-            return Created(Mapper.Map<ProductDto>(productEntity));
+            return Created(Mapper.Map<ProductDetailsDto>(productEntity));
         }
 
         [HttpPatch]
         [Authorize(Roles = "Admin, Moderator")]
-        public async Task<IHttpActionResult> UpdateProduct([FromODataUri] int key, Delta<ProductDto> productDto)
+        public async Task<IHttpActionResult> UpdateProduct([FromODataUri] int key, Delta<ProductDetailsDto> productDto)
         {
             if (!ModelState.IsValid)
             {
@@ -100,7 +100,7 @@ namespace Store.Web.Mvc.Client.Controllers.OData
 
                 throw;
             }
-            return Updated(Mapper.Map<ProductDto>(entity));
+            return Updated(Mapper.Map<ProductDetailsDto>(entity));
         }
 
         [Authorize(Roles = "Admin, Moderator")]

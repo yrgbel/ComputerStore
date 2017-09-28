@@ -12,6 +12,8 @@ namespace Store.Web.Mvc.Client.App_Start
     using Ninject.Web.Common;
     using System.Web.Mvc;
     using Store.Web.Mvc.Client.Infrastructure;
+    using System.Web.Http;
+    using WebApiContrib.IoC.Ninject;
 
     public static class NinjectWebCommon 
     {
@@ -48,6 +50,10 @@ namespace Store.Web.Mvc.Client.App_Start
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 RegisterServices(kernel);
+
+                // include IoC for Web Api
+                GlobalConfiguration.Configuration.DependencyResolver = new NinjectResolver(kernel);
+
                 return kernel;
             }
             catch

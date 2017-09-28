@@ -46,7 +46,14 @@
     <Compile Include="DTOs\CustomerDto.cs" />
     <Compile Include="DTOs\OrderDetailDto.cs" />
     <Compile Include="DTOs\OrderProductDto.cs" />
-    <Compile Include="DTOs\ProductDto.cs" />
+    <Compile Include="DTOs\ProductDescription\ProductDescriptionAllInOnePcDto.cs" />
+    <Compile Include="DTOs\ProductDescription\ProductDescriptionBaseDto.cs" />
+    <Compile Include="DTOs\ProductDescription\ProductDescriptionElectronicBookDto.cs" />
+    <Compile Include="DTOs\ProductDescription\ProductDescriptionMonitorDto.cs" />
+    <Compile Include="DTOs\ProductDescription\ProductDescriptionNotebookDto.cs" />
+    <Compile Include="DTOs\ProductDescription\ProductDescriptionServerDto.cs" />
+    <Compile Include="DTOs\ProductDescription\ProductDescriptionTabletDto.cs" />
+    <Compile Include="DTOs\ProductDetailsDto.cs" />
     <Compile Include="DTOs\ProductBrandDto.cs" />
     <Compile Include="DTOs\ProductCategoryDto.cs" />
     <Compile Include="DTOs\ProductManufacturerDto.cs" />

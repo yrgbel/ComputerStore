@@ -27,14 +27,14 @@ namespace Store.Web.Mvc.Client.Controllers.OData
         }
 
         [EnableQuery]
-        public IQueryable<ProductDto> GetCustomers()
+        public IQueryable<ProductDetailsDto> GetCustomers()
         {
             var dbset = (DbSet<Customer>)Uow.Customers.GetAll();
             // add eager loading
             return dbset
                 .Include(c => c.CusomerPhones)
                 .OrderBy(p => p.CustomerName)
-                .ProjectTo<ProductDto>();//use Automapper.QueryableExtension namespace
+                .ProjectTo<ProductDetailsDto>();//use Automapper.QueryableExtension namespace
         }
 
         [EnableQuery]
@@ -96,7 +96,7 @@ namespace Store.Web.Mvc.Client.Controllers.OData
 
                 throw;
             }
-            return Updated(Mapper.Map<ProductDto>(entity));
+            return Updated(Mapper.Map<ProductDetailsDto>(entity));
         }
 
         [Authorize(Roles = "Admin, Moderator")]

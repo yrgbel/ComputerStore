@@ -27,14 +27,14 @@ namespace Store.WebApi.Controllers.OData
         }
 
         [EnableQuery]
-        public IQueryable<ProductDto> GetCustomers()
+        public IQueryable<CustomerDto> GetCustomers()
         {
             var dbset = (DbSet<Customer>)Uow.Customers.GetAll();
             // add eager loading
             return dbset
                 .Include(c => c.CusomerPhones)
                 .OrderBy(p => p.CustomerName)
-                .ProjectTo<ProductDto>();//use Automapper.QueryableExtension namespace
+                .ProjectTo<CustomerDto>();//use Automapper.QueryableExtension namespace
         }
 
         [EnableQuery]
