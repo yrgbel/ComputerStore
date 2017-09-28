@@ -134,6 +134,18 @@
     <Compile Include="Migrations\201709241701071_DecreaseCapacityColumnProductImageMimeType.Designer.cs">
       <DependentUpon>201709241701071_DecreaseCapacityColumnProductImageMimeType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709281650370_AddColumnProductMiniatureImageToProduct.cs" />
+    <Compile Include="Migrations\201709281650370_AddColumnProductMiniatureImageToProduct.Designer.cs">
+      <DependentUpon>201709281650370_AddColumnProductMiniatureImageToProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709281724422_ChangeColumnsProductTableForSaveImageUrls.cs" />
+    <Compile Include="Migrations\201709281724422_ChangeColumnsProductTableForSaveImageUrls.Designer.cs">
+      <DependentUpon>201709281724422_ChangeColumnsProductTableForSaveImageUrls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709281729394_SetUpColumnsProductTableForSaveImageUrls.cs" />
+    <Compile Include="Migrations\201709281729394_SetUpColumnsProductTableForSaveImageUrls.Designer.cs">
+      <DependentUpon>201709281729394_SetUpColumnsProductTableForSaveImageUrls.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CustomerPhoneRepository.cs" />
@@ -208,6 +220,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709241701071_DecreaseCapacityColumnProductImageMimeType.resx">
       <DependentUpon>201709241701071_DecreaseCapacityColumnProductImageMimeType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709281650370_AddColumnProductMiniatureImageToProduct.resx">
+      <DependentUpon>201709281650370_AddColumnProductMiniatureImageToProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709281724422_ChangeColumnsProductTableForSaveImageUrls.resx">
+      <DependentUpon>201709281724422_ChangeColumnsProductTableForSaveImageUrls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709281729394_SetUpColumnsProductTableForSaveImageUrls.resx">
+      <DependentUpon>201709281729394_SetUpColumnsProductTableForSaveImageUrls.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

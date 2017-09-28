@@ -25,7 +25,7 @@ namespace Store.Model.POCO_Entities
         public int ProductId { get; set; } // ProductId (Primary key)
         public string ProductName { get; set; } // ProductName (length: 50)
         public decimal ProductPrice { get; set; } // ProductPrice
-        public byte[] ProductImage { get; set; } // ProductImage
+        public string ProductImageUrl { get; set; } // ProductImage
         public string ProductDescription { get; set; } // ProductDescription
         public decimal ProductQuanity { get; set; } // ProductQuanity
         public int? ProductBrandId { get; set; } // ProductBrandId
@@ -34,7 +34,7 @@ namespace Store.Model.POCO_Entities
         public int ProductSubCategoryId { get; set; } // ProductSubCategoryId
         public int ProductCategoryId { get; set; } // ProductCategoryId
         public int? ProductDiscount { get; set; } // ProductDiscount
-        public string ProductImageMimeType { get; set; } // ProductImageMimeType
+        public string ProductMiniatureImageUrl { get; set; } // ProductMiniatureImage
 
         // Reverse navigation
 

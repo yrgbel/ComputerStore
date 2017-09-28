@@ -34,7 +34,7 @@ namespace Store.Data
             Property(x => x.ProductId).HasColumnName(@"ProductId").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             Property(x => x.ProductName).HasColumnName(@"ProductName").HasColumnType("nvarchar").IsRequired().HasMaxLength(50);
             Property(x => x.ProductPrice).HasColumnName(@"ProductPrice").HasColumnType("money").IsRequired().HasPrecision(19,4);
-            Property(x => x.ProductImage).HasColumnName(@"ProductImage").HasColumnType("varbinary(max)").IsOptional();
+            Property(x => x.ProductImageUrl).HasColumnName(@"ProductImageUrl").HasColumnType("nvarchar").HasMaxLength(256).IsOptional();
             Property(x => x.ProductDescription).HasColumnName(@"ProductDescription").HasColumnType("nvarchar(max)").IsOptional();
             Property(x => x.ProductQuanity).HasColumnName(@"ProductQuanity").HasColumnType("decimal").IsRequired().HasPrecision(22,4);
             Property(x => x.ProductBrandId).HasColumnName(@"ProductBrandId").HasColumnType("int").IsOptional();
@@ -43,7 +43,8 @@ namespace Store.Data
             Property(x => x.ProductSubCategoryId).HasColumnName(@"ProductSubCategoryId").HasColumnType("int").IsRequired();
             Property(x => x.ProductCategoryId).HasColumnName(@"ProductCategoryId").HasColumnType("int").IsRequired();
             Property(x => x.ProductDiscount).HasColumnName(@"ProductDiscount").HasColumnType("int").IsOptional();
-            Property(x => x.ProductImageMimeType).HasColumnName(@"ProductImageMimeType").HasColumnType("nvarchar").HasMaxLength(15).IsOptional();
+            Property(x => x.ProductMiniatureImageUrl).HasColumnName(@"ProductMiniatureImageUrl").HasColumnType("nvarchar").HasMaxLength(256).IsOptional();
+
 
             // Foreign keys
             HasOptional(a => a.ProductBrand).WithMany(b => b.Products).HasForeignKey(c => c.ProductBrandId).WillCascadeOnDelete(false); // ProductBrand_Product
