@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Configuration;
 using AutoMapper;
+using Store.Data.Helpers;
 using Store.DomainModel.DTOs;
+using Store.Infrastructure;
 using Store.Model.POCO_Entities;
 
 namespace Store.Data.MappingProfiles
@@ -17,7 +20,7 @@ namespace Store.Data.MappingProfiles
             CreateMap<OrderDetail, OrderDetailDto>();
                 
             CreateMap<OrderProduct, OrderProductDto>();
-
+         
             CreateMap<Product, ProductDetailsDto>()
                 .ForMember(dto => dto.ProductBrandCountry,
                     cfg => cfg.MapFrom(dest => dest.ProductBrand.ProductBrandCountry))
@@ -28,7 +31,11 @@ namespace Store.Data.MappingProfiles
                 .ForMember(dto => dto.ProductManufacturerCountry,
                     cfg => cfg.MapFrom(dest => dest.ProductManufacturer.ProductManufacturerCountry))
                 .ForMember(dto => dto.ProductSubCategoryName,
-                    cfg => cfg.MapFrom(dest => dest.ProductSubCategory.ProductSubCategoryName));
+                    cfg => cfg.MapFrom(dest => dest.ProductSubCategory.ProductSubCategoryName))
+                .ForMember(dto => dto.ProductFullSizeImageUrl,
+                    cfg => cfg.MapFrom(dest => DataSettingsProvider.ImageOriginalPath + dest.ProductImageName))
+                .ForMember(dto => dto.ProductCroppedSizeImageUrl,
+                    cfg => cfg.MapFrom(dest => DataSettingsProvider.ImagCroppedPath + dest.ProductImageName));
 
             CreateMap<ProductBrand, ProductBrandDto>();
             CreateMap<ProductCategory, ProductCategoryDto>();

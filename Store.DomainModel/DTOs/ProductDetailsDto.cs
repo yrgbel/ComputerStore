@@ -10,7 +10,8 @@ namespace Store.DomainModel.DTOs
         public string ProductCode { get; set; } // ProductCode
         public int? ProductDiscount { get; set; } // ProductDiscount
         public string ProductBrandName { get; set; } // ProductBrandName
-        public byte[] ProductImage { get; set; } // ProductImage
+        public string ProductFullSizeImageUrl { get; set; }
+        public string ProductCroppedSizeImageUrl { get; set; }
         public string ProductBrandCountry { get; set; } // ProductBrandCountry
         public string ProductManufacturerCountry { get; set; } // ProductManufacturerCountry
         public string ProductSubCategoryName { get; set; } // ProductSubCategoryName

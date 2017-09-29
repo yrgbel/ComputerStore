@@ -87,6 +87,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -108,6 +109,7 @@
     <Compile Include="EntityTypeConfigurations\ProductManufacturerConfiguration.cs" />
     <Compile Include="EntityTypeConfigurations\ProductSubCategoryConfiguration.cs" />
     <Compile Include="Context\StoreDbInitializer.cs" />
+    <Compile Include="Helpers\DataSettingsProvider.cs" />
     <Compile Include="Helpers\IRepositoryProvider.cs" />
     <Compile Include="Helpers\RepositoryFactories.cs" />
     <Compile Include="Helpers\RepositoryProvider.cs" />
@@ -145,6 +147,14 @@
     <Compile Include="Migrations\201709281729394_SetUpColumnsProductTableForSaveImageUrls.cs" />
     <Compile Include="Migrations\201709281729394_SetUpColumnsProductTableForSaveImageUrls.Designer.cs">
       <DependentUpon>201709281729394_SetUpColumnsProductTableForSaveImageUrls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709290919062_ChangeWayStoreImageUrl.cs" />
+    <Compile Include="Migrations\201709290919062_ChangeWayStoreImageUrl.Designer.cs">
+      <DependentUpon>201709290919062_ChangeWayStoreImageUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709290922213_SetUpColumnForImageStoreInProduct.cs" />
+    <Compile Include="Migrations\201709290922213_SetUpColumnForImageStoreInProduct.Designer.cs">
+      <DependentUpon>201709290922213_SetUpColumnForImageStoreInProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -200,6 +210,10 @@
       <Project>{35683e2f-9b5e-41df-853a-621a43872cfd}</Project>
       <Name>Store.DomainModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Store.Infrastructure\Store.Infrastructure.csproj">
+      <Project>{097587f9-7b84-470c-aac6-15bb08136529}</Project>
+      <Name>Store.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Store.Model\Store.DataModel.csproj">
       <Project>{071a3712-6c1f-42ab-b288-dac7a7ec1230}</Project>
       <Name>Store.DataModel</Name>
@@ -229,6 +243,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709281729394_SetUpColumnsProductTableForSaveImageUrls.resx">
       <DependentUpon>201709281729394_SetUpColumnsProductTableForSaveImageUrls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709290919062_ChangeWayStoreImageUrl.resx">
+      <DependentUpon>201709290919062_ChangeWayStoreImageUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709290922213_SetUpColumnForImageStoreInProduct.resx">
+      <DependentUpon>201709290922213_SetUpColumnForImageStoreInProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

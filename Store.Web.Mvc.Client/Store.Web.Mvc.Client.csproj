@@ -179,9 +179,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\dreamstore.mdf" />
-    <Content Include="App_Data\dreamstore_log.ldf">
-      <DependentUpon>dreamstore.mdf</DependentUpon>
+    <Content Include="App_Data\dreamstoreDb.mdf" />
+    <Content Include="App_Data\dreamstoreDb_log.ldf">
+      <DependentUpon>dreamstoreDb.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
@@ -198,21 +198,21 @@
     <Content Include="Content\images\categories\tablet.svg" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\products\original\notebooks\AppleMacBookPro13TouchBar2016.jpeg" />
-    <Content Include="Content\images\products\cropped\notebooks\AppleMacBookPro13TouchBar2016_thumb.jpeg" />
+    <Content Include="Content\images\products\cropped\notebooks\AppleMacBookPro13TouchBar2016.jpeg" />
     <Content Include="Content\images\products\original\notebooks\AppleMacBookPro15Retina2015.jpg" />
-    <Content Include="Content\images\products\cropped\notebooks\AppleMacBookPro15Retina2015_thumb.jpg" />
+    <Content Include="Content\images\products\cropped\notebooks\AppleMacBookPro15Retina2015.jpg" />
     <Content Include="Content\images\products\original\notebooks\AppleMacBookPro15TouchBar2016.jpeg" />
-    <Content Include="Content\images\products\cropped\notebooks\AppleMacBookPro15TouchBar2016_thumb.jpeg" />
+    <Content Include="Content\images\products\cropped\notebooks\AppleMacBookPro15TouchBar2016.jpeg" />
     <Content Include="Content\images\products\original\notebooks\AppleMacBookPro15TouchBar2017.jpeg" />
-    <Content Include="Content\images\products\cropped\notebooks\AppleMacBookPro15TouchBar2017_thumb.jpeg" />
+    <Content Include="Content\images\products\cropped\notebooks\AppleMacBookPro15TouchBar2017.jpeg" />
     <Content Include="Content\images\products\original\notebooks\hp6735s.jpg" />
-    <Content Include="Content\images\products\cropped\notebooks\hp6735s_thumb.jpg" />
+    <Content Include="Content\images\products\cropped\notebooks\hp6735s.jpg" />
     <Content Include="Content\images\products\original\notebooks\HpENVY13-ad011ur.png" />
-    <Content Include="Content\images\products\cropped\notebooks\HpENVY13-ad011ur_thumb.png" />
+    <Content Include="Content\images\products\cropped\notebooks\HpENVY13-ad011ur.png" />
     <Content Include="Content\images\products\original\notebooks\HpPavilionDv6-6b53er.jpg" />
-    <Content Include="Content\images\products\cropped\notebooks\HpPavilionDv6-6b53er_thumb.jpg" />
+    <Content Include="Content\images\products\cropped\notebooks\HpPavilionDv6-6b53er.jpg" />
     <Content Include="Content\images\products\original\notebooks\HpProBook440G4.png" />
-    <Content Include="Content\images\products\cropped\notebooks\HpProBook440G4_thumb.png" />
+    <Content Include="Content\images\products\cropped\notebooks\HpProBook440G4.png" />
     <Content Include="Content\media.css">
       <DependentUpon>media.less</DependentUpon>
     </Content>
