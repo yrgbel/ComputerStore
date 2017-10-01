@@ -33,7 +33,7 @@ namespace Store.Data
             HasKey(x => new { x.CustomerPhoneId, x.CustomerId });
 
             Property(x => x.CustomerId).HasColumnName(@"CustomerId").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None);
-            Property(x => x.CustomerPhoneNumber).HasColumnName(@"CustomerPhoneNumber").HasColumnType("varchar").IsOptional().IsUnicode(false).HasMaxLength(15);
+            Property(x => x.CustomerPhoneNumber).HasColumnName(@"CustomerPhoneNumber").HasColumnType("varchar").IsRequired().IsUnicode(false).HasMaxLength(15);
             Property(x => x.CustomerPhoneId).HasColumnName(@"CustomerPhoneId").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
 
             // Foreign keys

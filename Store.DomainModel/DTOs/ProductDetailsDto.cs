@@ -1,3 +1,5 @@
+using Store.DomainModel.Helpers;
+
 namespace Store.DomainModel.DTOs
 {
     public class ProductDetailsDto
@@ -10,11 +12,11 @@ namespace Store.DomainModel.DTOs
         public string ProductCode { get; set; } // ProductCode
         public int? ProductDiscount { get; set; } // ProductDiscount
         public string ProductBrandName { get; set; } // ProductBrandName
-        public string ProductFullSizeImageUrl { get; set; }
-        public string ProductCroppedSizeImageUrl { get; set; }
         public string ProductBrandCountry { get; set; } // ProductBrandCountry
         public string ProductManufacturerCountry { get; set; } // ProductManufacturerCountry
         public string ProductSubCategoryName { get; set; } // ProductSubCategoryName
         public string ProductCategoryName { get; set; } // ProductCategoryName
+        public string ProductImageLargeUrl { get; set; }
+        public string ProductImageSmallUrl { get; set; }
     }
 }

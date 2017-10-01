@@ -14,6 +14,8 @@ namespace Store.DomainModel.DTOs
         public string CustomerCity { get; set; }
         public string CustomerRegion { get; set; }
         public string CustomerCountry { get; set; }
+        public int OrderCount { get; set; }
+
         public virtual ICollection<CustomerPhoneDto> CusomerPhones { get; set; } // CusomerPhone.Customer_CustomerPhone
         public virtual ICollection<OrderProductDto> OrderProducts { get; set; } // OrderProduct.Customer_OrderProduct
 

@@ -109,13 +109,12 @@
     <Compile Include="EntityTypeConfigurations\ProductManufacturerConfiguration.cs" />
     <Compile Include="EntityTypeConfigurations\ProductSubCategoryConfiguration.cs" />
     <Compile Include="Context\StoreDbInitializer.cs" />
-    <Compile Include="Helpers\DataSettingsProvider.cs" />
     <Compile Include="Helpers\IRepositoryProvider.cs" />
     <Compile Include="Helpers\RepositoryFactories.cs" />
     <Compile Include="Helpers\RepositoryProvider.cs" />
-    <Compile Include="IdentityModels\ApplicationUser.cs" />
+    <Compile Include="IdentityModels\ApplicationSignInManager.cs" />
     <Compile Include="IdentityModels\ApplicationUserManager.cs" />
-    <Compile Include="MappingProfiles\MappingProfile.cs" />
+    <Compile Include="MappingProfiles\MappingDtoProfile.cs" />
     <Compile Include="Migrations\201709231732024_InitialModel.cs" />
     <Compile Include="Migrations\201709231732024_InitialModel.Designer.cs">
       <DependentUpon>201709231732024_InitialModel.cs</DependentUpon>
@@ -155,6 +154,34 @@
     <Compile Include="Migrations\201709290922213_SetUpColumnForImageStoreInProduct.cs" />
     <Compile Include="Migrations\201709290922213_SetUpColumnForImageStoreInProduct.Designer.cs">
       <DependentUpon>201709290922213_SetUpColumnForImageStoreInProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709301423283_DeleteColumnsForStoreImageData.cs" />
+    <Compile Include="Migrations\201709301423283_DeleteColumnsForStoreImageData.Designer.cs">
+      <DependentUpon>201709301423283_DeleteColumnsForStoreImageData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710011307103_AddAdditionalColumnsToAspNetUsers.cs" />
+    <Compile Include="Migrations\201710011307103_AddAdditionalColumnsToAspNetUsers.Designer.cs">
+      <DependentUpon>201710011307103_AddAdditionalColumnsToAspNetUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710011309143_AddOrderCountColumnToCustomer.cs" />
+    <Compile Include="Migrations\201710011309143_AddOrderCountColumnToCustomer.Designer.cs">
+      <DependentUpon>201710011309143_AddOrderCountColumnToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710011419585_AddRelationToCustomerAndAspNetUsers.cs" />
+    <Compile Include="Migrations\201710011419585_AddRelationToCustomerAndAspNetUsers.Designer.cs">
+      <DependentUpon>201710011419585_AddRelationToCustomerAndAspNetUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710011456033_ApplyRestrictionsToCustomerAndCustomerPhone.cs" />
+    <Compile Include="Migrations\201710011456033_ApplyRestrictionsToCustomerAndCustomerPhone.Designer.cs">
+      <DependentUpon>201710011456033_ApplyRestrictionsToCustomerAndCustomerPhone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710011848319_RemoveColumnsFromApplicationUserForRecreate.cs" />
+    <Compile Include="Migrations\201710011848319_RemoveColumnsFromApplicationUserForRecreate.Designer.cs">
+      <DependentUpon>201710011848319_RemoveColumnsFromApplicationUserForRecreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710011851014_AddColumnsToApplicationUser.cs" />
+    <Compile Include="Migrations\201710011851014_AddColumnsToApplicationUser.Designer.cs">
+      <DependentUpon>201710011851014_AddColumnsToApplicationUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -249,6 +276,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709290922213_SetUpColumnForImageStoreInProduct.resx">
       <DependentUpon>201709290922213_SetUpColumnForImageStoreInProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709301423283_DeleteColumnsForStoreImageData.resx">
+      <DependentUpon>201709301423283_DeleteColumnsForStoreImageData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710011307103_AddAdditionalColumnsToAspNetUsers.resx">
+      <DependentUpon>201710011307103_AddAdditionalColumnsToAspNetUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710011309143_AddOrderCountColumnToCustomer.resx">
+      <DependentUpon>201710011309143_AddOrderCountColumnToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710011419585_AddRelationToCustomerAndAspNetUsers.resx">
+      <DependentUpon>201710011419585_AddRelationToCustomerAndAspNetUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710011456033_ApplyRestrictionsToCustomerAndCustomerPhone.resx">
+      <DependentUpon>201710011456033_ApplyRestrictionsToCustomerAndCustomerPhone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710011848319_RemoveColumnsFromApplicationUserForRecreate.resx">
+      <DependentUpon>201710011848319_RemoveColumnsFromApplicationUserForRecreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710011851014_AddColumnsToApplicationUser.resx">
+      <DependentUpon>201710011851014_AddColumnsToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -36,11 +36,10 @@ namespace Store.Data
             Property(x => x.CustomerEmail).HasColumnName(@"CustomerEmail").HasColumnType("varchar").IsRequired().IsUnicode(false).HasMaxLength(50);
             Property(x => x.CustomerPatronymic).HasColumnName(@"CustomerPatronymic").HasColumnType("varchar").IsOptional().IsUnicode(false).HasMaxLength(40);
             Property(x => x.CustomerLastName).HasColumnName(@"CustomerLastName").HasColumnType("varchar").IsRequired().IsUnicode(false).HasMaxLength(40);
-            Property(x => x.UserId).HasColumnName(@"UserId").HasColumnType("int").IsOptional();
-            Property(x => x.CustomerAddress).HasColumnName(@"CustomerAddress").HasColumnType("nvarchar").IsOptional().HasMaxLength(50);
-            Property(x => x.CustomerCity).HasColumnName(@"CustomerCity").HasColumnType("nvarchar").IsOptional().HasMaxLength(15);
+            Property(x => x.CustomerAddress).HasColumnName(@"CustomerAddress").HasColumnType("nvarchar").IsRequired().HasMaxLength(50);
+            Property(x => x.CustomerCity).HasColumnName(@"CustomerCity").HasColumnType("nvarchar").IsRequired().HasMaxLength(15);
             Property(x => x.CustomerRegion).HasColumnName(@"CustomerRegion").HasColumnType("nvarchar").IsOptional().HasMaxLength(20);
-            Property(x => x.CustomerCountry).HasColumnName(@"CustomerCountry").HasColumnType("nvarchar").IsOptional().HasMaxLength(20);
+            Property(x => x.CustomerCountry).HasColumnName(@"CustomerCountry").HasColumnType("nvarchar").IsRequired().HasMaxLength(20);
         }
     }
 

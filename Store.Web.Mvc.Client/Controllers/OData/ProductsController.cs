@@ -31,14 +31,15 @@ namespace Store.Web.Mvc.Client.Controllers.OData
         public IQueryable<ProductDetailsDto> Get()
         {
             var dbset = (DbSet<Product>)Uow.Products.GetAll();
-            // add eager loading
+            // eager loading
             return dbset
                 .Include(p => p.ProductBrand)
                 .Include(p => p.ProductManufacturer)
                 .Include(p => p.ProductSubCategory)
                 .Include(p => p.ProductSubCategory.ProductCategory)
-                .OrderBy(p => p.ProductName)
-                .ProjectTo<ProductDetailsDto>();//use Automapper.QueryableExtension namespace
+                .ToList()
+                .AsQueryable()
+                .ProjectTo<ProductDetailsDto>();
         }
 
         [EnableQuery]

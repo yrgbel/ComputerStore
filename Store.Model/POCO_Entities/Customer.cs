@@ -10,6 +10,7 @@
 // TargetFrameworkVersion = 4.6
 
 
+using Store.Model.IdentityEntities;
 using Store.Model.POCO_Entities;
 
 #pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
@@ -27,11 +28,12 @@ namespace Store.Model.POCO_Entities
         public string CustomerEmail { get; set; } // CustomerEmail (length: 50)
         public string CustomerPatronymic { get; set; } // CustomerPatronymic (length: 40)
         public string CustomerLastName { get; set; } // CustomerLastName (length: 40)
-        public int? UserId { get; set; } // UserId
         public string CustomerAddress { get; set; } // CustomerAddress (length: 50)
         public string CustomerCity { get; set; } // CustomerCity (length: 15)
         public string CustomerRegion { get; set; } // CustomerRegion (length: 20)
         public string CustomerCountry { get; set; } // CustomerCountry (length: 20)
+        public int OrderCount { get; set; } // OrderCount
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         // Reverse navigation
 

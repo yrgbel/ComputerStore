@@ -33,8 +33,6 @@ namespace Store.Model.POCO_Entities
         public int ProductSubCategoryId { get; set; } // ProductSubCategoryId
         public int ProductCategoryId { get; set; } // ProductCategoryId
         public int? ProductDiscount { get; set; } // ProductDiscount
-        public string ProductImageName { get; set; }
-        public string ProductImageMimeType { get; set; }
 
         // Reverse navigation
 

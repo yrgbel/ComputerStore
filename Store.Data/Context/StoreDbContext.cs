@@ -12,7 +12,7 @@
 using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Store.Data.Context;
-using Store.Data.IdentityModels;
+using Store.Model.IdentityEntities;
 using Store.Model.POCO_Entities;
 
 #pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
@@ -86,6 +86,13 @@ namespace Store.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            // one-to-zero or one relationship between ApplicationUser and Customer
+            // UserId column in Customers table will be foreign key
+            modelBuilder.Entity<ApplicationUser>()
+                .HasOptional(m => m.Customer)
+                .WithRequired(m => m.ApplicationUser)
+                .Map(p => p.MapKey("UserId"));
+
             modelBuilder.Configurations.Add(new CusomerPhoneConfiguration());
             modelBuilder.Configurations.Add(new CustomerConfiguration());
             modelBuilder.Configurations.Add(new OrderDetailConfiguration());
@@ -99,6 +106,7 @@ namespace Store.Data
 
         public static System.Data.Entity.DbModelBuilder CreateModel(System.Data.Entity.DbModelBuilder modelBuilder, string schema)
         {
+            //modelBuilder.Configurations.Add(new ApplicationUserConfiguration(schema));
             modelBuilder.Configurations.Add(new CusomerPhoneConfiguration(schema));
             modelBuilder.Configurations.Add(new CustomerConfiguration(schema));
             modelBuilder.Configurations.Add(new OrderDetailConfiguration(schema));

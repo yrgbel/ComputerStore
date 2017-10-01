@@ -10,57 +10,8 @@ namespace Store.Data.Context
     {
         public void InitializeDatabase(StoreDbContext context)
         {
-            //string imageOriginalPath = ConfigurationManager.AppSettings["ImageOriginalPath"];
-            //string imageCroppedPath = ConfigurationManager.AppSettings["ImageCroppedPath"];
-
             if (context.Database.Exists())
             {
-                if (context.Customers.Count() == 0)
-                {
-                    Customer alex = new Customer
-                    {
-                        CustomerName = "Alex",
-                        CustomerLastName = "Black",
-                        CustomerEmail = "alex@gmail.com",
-                        CustomerAddress = "main street, 12-222",
-                        CustomerCity = "New York",
-                        CustomerRegion = "New York",
-                        CustomerCountry = "USA"
-                    };
-
-                    Customer alexEntity = context.Customers.Add(alex);
-
-                    Customer ivan = new Customer
-                    {
-                        CustomerName = "Ivan",
-                        CustomerLastName = "Petrov",
-                        CustomerEmail = "ivan@mail.com",
-                        CustomerAddress = "leninskaya street, 22-45",
-                        CustomerCity = "Moscow",
-                        CustomerRegion = "Moscow",
-                        CustomerCountry = "Russia"
-                    };
-
-                    Customer ivanEntity = context.Customers.Add(ivan);
-
-                    CustomerPhone ivanPhoneNumber = new CustomerPhone
-                    {
-                        Customer = ivanEntity,
-                        CustomerId = ivanEntity.CustomerId,
-                        CustomerPhoneNumber = "+375886167618"
-                    };
-
-                    CustomerPhone alexPhoneNumber = new CustomerPhone
-                    {
-                        Customer = alexEntity,
-                        CustomerId = alexEntity.CustomerId,
-                        CustomerPhoneNumber = "+375586543618"
-                    };
-
-                    context.CusomerPhones.AddRange(new[] { ivanPhoneNumber, alexPhoneNumber });
-                    context.SaveChanges();
-                }
-
                 if (context.Products.Count() == 0)
                 {
                     // Forced deletion if data exists
@@ -124,8 +75,6 @@ namespace Store.Data.Context
                         ProductBrand = hpBrandEntity,
                         ProductBrandId = hpBrandEntity.ProductBrandId,
                         ProductPrice = 615.72m,
-                        ProductImageName = "hp6735s",
-                        ProductImageMimeType = "image/jpeg",
                         ProductDescription = "Good notebook.",
                         ProductQuanity = 15,
                         ProductCode = "6735s-HS82753-21",
@@ -143,8 +92,6 @@ namespace Store.Data.Context
                         ProductBrand = appleBrandEntity,
                         ProductBrandId = appleBrandEntity.ProductBrandId,
                         ProductPrice = 1618.00m,
-                        ProductImageName = "AppleMacBookPro15TouchBar2016",
-                        ProductImageMimeType = "image/jpeg",
                         ProductDescription = "Good notebook. Very good.",
                         ProductQuanity = 180,
                         ProductCode = "air-HOKJ853-20",
@@ -162,8 +109,6 @@ namespace Store.Data.Context
                         ProductBrand = hpBrandEntity,
                         ProductBrandId = hpBrandEntity.ProductBrandId,
                         ProductPrice = 895m,
-                        ProductImageName = "PavilionDv6-6b53er",
-                        ProductImageMimeType = "image/jpeg",
                         ProductDescription = "Good Pavilion notebook.",
                         ProductQuanity = 25,
                         ProductCode = "Pavilion-dv6-HS32751-51",
@@ -181,8 +126,6 @@ namespace Store.Data.Context
                         ProductBrand = hpBrandEntity,
                         ProductBrandId = hpBrandEntity.ProductBrandId,
                         ProductPrice = 950.54m,
-                        ProductImageName = "HpENVY13-ad011ur",
-                        ProductImageMimeType = "image/png",
                         ProductDescription = "Good HP ENVY is a good notebook.",
                         ProductQuanity = 59,
                         ProductCode = "Envy-13-ad011ur-1WS57EA-71",
@@ -200,8 +143,6 @@ namespace Store.Data.Context
                         ProductBrand = hpBrandEntity,
                         ProductBrandId = hpBrandEntity.ProductBrandId,
                         ProductPrice = 1250.14m,
-                        ProductImageName = "HpProBook440G4",
-                        ProductImageMimeType = "image/png",
                         ProductDescription = "Good HP ProBook 440 G4 notebook.",
                         ProductQuanity = 180,
                         ProductCode = "HP-ProBook440-G4-Z3A12ES-21",
@@ -219,8 +160,6 @@ namespace Store.Data.Context
                         ProductBrand = appleBrandEntity,
                         ProductBrandId = appleBrandEntity.ProductBrandId,
                         ProductPrice = 1250.14m,
-                        ProductImageName = "AppleMacBookPro15Retina2015",
-                        ProductImageMimeType = "image/jpeg",
                         ProductDescription = "Good Apple MacBook Pro 15'' Retina notebook.",
                         ProductQuanity = 255,
                         ProductCode = "Apple-MacBook-Pro15G4-MJLQ2-09",
@@ -238,8 +177,6 @@ namespace Store.Data.Context
                         ProductBrand = appleBrandEntity,
                         ProductBrandId = appleBrandEntity.ProductBrandId,
                         ProductPrice = 1470m,
-                        ProductImageName = "AppleMacBookPro15TouchBar2017",
-                        ProductImageMimeType = "image/jpeg",
                         ProductDescription = "Good Apple MacBook Pro 15'' Touch Bar notebook.",
                         ProductQuanity = 105,
                         ProductCode = "Apple-MacBook-Pro15G4-MPTV2-09",
@@ -257,8 +194,6 @@ namespace Store.Data.Context
                         ProductBrand = appleBrandEntity,
                         ProductBrandId = appleBrandEntity.ProductBrandId,
                         ProductPrice = 749.5m,
-                        ProductImageName = "AppleMacBookPro13TouchBar2016",
-                        ProductImageMimeType = "image/jpeg",
                         ProductDescription = "Good Apple MacBook Pro 15'' Touch Bar notebook.",
                         ProductQuanity = 80,
                         ProductCode = "Apple-MacBook-Pro13-MLL42-09",
@@ -269,6 +204,8 @@ namespace Store.Data.Context
                         ProductSubCategory = subCategoryNotebooksEntity,
                         ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId
                     };
+
+                    context.Database.ExecuteSqlCommand("DBCC CHECKIDENT ('Product', RESEED, 100);");
 
                     context.Products.AddRange(new[] {
                         productNotebookHp6735S, productNotebookAppleMacBookPro15TouchBar2016,

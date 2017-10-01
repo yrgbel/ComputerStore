@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Web", "Store.Web\Store.Web.csproj", "{B8E77C81-6967-420C-8290-6C17FD5BDC00}"
 EndProject
@@ -28,10 +28,19 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Service", "Store.Service\Store.Service.csproj", "{191089C5-8A44-4AE7-9A22-4F42D4EF403B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Web.Mvc.Client", "Store.Web.Mvc.Client\Store.Web.Mvc.Client.csproj", "{86426103-7441-42F6-A603-FDB0001BCBF3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A9BC193A-6AA0-4E53-B6ED-24A2D9CB8C40} = {A9BC193A-6AA0-4E53-B6ED-24A2D9CB8C40}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Web.Mvc.Client.Tests", "Store.Web.Mvc.Client.Tests\Store.Web.Mvc.Client.Tests.csproj", "{FBCA9E79-EF1F-423E-A49F-607872A142E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Infrastructure", "Store.Infrastructure\Store.Infrastructure.csproj", "{097587F9-7B84-470C-AAC6-15BB08136529}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Hosting Layer", "5. Hosting Layer", "{1501D864-6DDD-49D3-A224-B3CCEB43E7C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.ImageService", "Store.ImageService\Store.ImageService.csproj", "{1036406C-5753-4FBB-A2C5-30314B260CA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Wcf.ImageServer", "Store.Wcf.ImageServer\Store.Wcf.ImageServer.csproj", "{A9BC193A-6AA0-4E53-B6ED-24A2D9CB8C40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +84,14 @@ Global
 		{097587F9-7B84-470C-AAC6-15BB08136529}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{097587F9-7B84-470C-AAC6-15BB08136529}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{097587F9-7B84-470C-AAC6-15BB08136529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1036406C-5753-4FBB-A2C5-30314B260CA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1036406C-5753-4FBB-A2C5-30314B260CA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1036406C-5753-4FBB-A2C5-30314B260CA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1036406C-5753-4FBB-A2C5-30314B260CA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9BC193A-6AA0-4E53-B6ED-24A2D9CB8C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9BC193A-6AA0-4E53-B6ED-24A2D9CB8C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9BC193A-6AA0-4E53-B6ED-24A2D9CB8C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9BC193A-6AA0-4E53-B6ED-24A2D9CB8C40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,6 +106,8 @@ Global
 		{86426103-7441-42F6-A603-FDB0001BCBF3} = {E97C5106-2E0E-4637-B98D-5EA7BC4C494B}
 		{FBCA9E79-EF1F-423E-A49F-607872A142E1} = {E97C5106-2E0E-4637-B98D-5EA7BC4C494B}
 		{097587F9-7B84-470C-AAC6-15BB08136529} = {3D46D357-F6A2-43E9-805B-F15CE8161C05}
+		{1036406C-5753-4FBB-A2C5-30314B260CA2} = {9601E231-65FE-4E18-A326-D17A40687B8F}
+		{A9BC193A-6AA0-4E53-B6ED-24A2D9CB8C40} = {1501D864-6DDD-49D3-A224-B3CCEB43E7C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		LessCompiler = b8e77c81-6967-420c-8290-6c17fd5bdc00,86426103-7441-42f6-a603-fdb0001bcbf3
