@@ -95,7 +95,7 @@
     margin: 0 0;
     background-color: #1A3668;
   }
-  ul#signup-user,
+  #signup-user,
   .validation-summary-errors {
     width: 90%;
     margin-left: 5%;
@@ -184,7 +184,7 @@
   .categories_img {
     width: 50px;
   }
-  ul#signup-user,
+  #signup-user,
   .validation-summary-errors {
     width: 90%;
     margin-left: 5%;
@@ -259,7 +259,7 @@
   .categories_img {
     width: 50px;
   }
-  ul#signup-user,
+  #signup-user,
   .validation-summary-errors {
     width: 90%;
     margin-left: 5%;
