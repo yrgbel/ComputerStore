@@ -69,9 +69,11 @@
             </div>
         </nav>
     </header>
-<div>
-    @RenderBody()
-</div>
+<section>
+    <div class="container" id="content">
+        @RenderBody()
+    </div>
+</section>
 <!--
 When bundling, load in this sequence:
 1) shivs and jQuery

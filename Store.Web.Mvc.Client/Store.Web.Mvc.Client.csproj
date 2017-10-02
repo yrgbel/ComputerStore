@@ -188,6 +188,10 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Auth\Views\web.config" />
     <Content Include="Areas\Auth\Views\Auth\Signup.cshtml" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Connected Services\ImageServiceReference\ImageService.disco" />
     <None Include="Connected Services\ImageServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\ImageServiceReference\configuration.svcinfo" />
@@ -310,7 +314,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\BaseController.cs" />
     <Compile Include="Infrastructure\MappingProfiles\MappingModelViewProfile.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

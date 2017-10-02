@@ -13,7 +13,7 @@ using Store.Web.Mvc.Client.Infrastructure;
 namespace Store.Web.Mvc.Client.Areas.Auth.Controllers
 {
     [Authorize]
-    public class AuthController : BaseController
+    public class AuthController : Controller
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
@@ -74,8 +74,6 @@ namespace Store.Web.Mvc.Client.Areas.Auth.Controllers
                 AddErrors(result);
                 //Failure = result.Errors.First();
             }
-            else
-                Failure = "Signup was unsuccessful. Please check all data entries";
 
             return View(model);
         }

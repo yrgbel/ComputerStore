@@ -1,4 +1,4 @@
-body {
+﻿body {
   font-family: "RalewayRegular", sans-serif;
   font-size: 16px;
   min-width: 320px;
@@ -9,6 +9,14 @@ body {
   color: #fff;
   border: none;
   text-transform: uppercase;
+}
+.field-validation-error {
+  color: #D13232;
+  padding-left: 0;
+  font-size: 15px;
+}
+.input-validation-error {
+  border: 2px solid #D13232;
 }
 .my_btn:hover {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
@@ -21,6 +29,7 @@ header {
   height: 60px;
   /*background-image: url('images/banner.jpg');*/
   background-color: #fff;
+  -webkit-background-size: cover;
   background-size: cover;
 }
 nav {
@@ -88,6 +97,9 @@ nav {
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   background-color: #1A3668;
+  background-image: -webkit-linear-gradient(top, #1A3668 0%, #1A3668 100%);
+  background-image: -o-linear-gradient(top, #1A3668 0%, #1A3668 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1A3668), to(#1A3668));
   background-image: linear-gradient(to bottom, #1A3668 0%, #1A3668 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
   background-repeat: repeat-x;
@@ -161,3 +173,6 @@ nav {
   fill: #196cb7;
 }
 /*<---PARAMETRS SECTION*/
+ul#signup-user {
+  width: 33%;
+}

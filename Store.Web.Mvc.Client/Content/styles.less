@@ -6,13 +6,22 @@ body {
     min-width: 320px;
 }
 
-
 /*BUTTONS*/
 .my_btn {
     background-color: @color-menu;
     color: #fff;
     border: none;
     text-transform: uppercase;
+}
+
+.field-validation-error {
+    color: #D13232;
+    padding-left: 0;
+    font-size: 15px;
+}
+
+.input-validation-error {
+    border: 2px solid #D13232;
 }
 
 .my_btn:hover {
@@ -201,5 +210,8 @@ nav {
 .param_block:hover .categories_fill {
     fill: saturate(lighten(@color-categories, 5%), 20%);
 }
-
 /*<---PARAMETRS SECTION*/
+
+ul#signup-user {
+    width: 33%;
+}

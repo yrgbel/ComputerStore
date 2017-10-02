@@ -30,6 +30,7 @@ namespace Store.Web.Mvc.Client.Infrastructure.MappingProfiles
                 .ForMember(u => u.UserName, cfg => cfg.MapFrom(s => s.Email))
                 .ForMember(u => u.CreatedOn, cfg => cfg.MapFrom(s => DateTime.Now))
                 .ForMember(u => u.ChangedOn, cfg => cfg.MapFrom(s => DateTime.Now))
+                .ForMember(u => u.SignupDate, cfg => cfg.MapFrom(s => DateTime.Now))
                 .ForMember(u => u.Customer, cfg => cfg.MapFrom(s => Mapper.Map<Customer>(s)));
 
 
