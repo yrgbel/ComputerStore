@@ -101,7 +101,8 @@
     margin-left: 5%;
     margin-right: 5%;
   }
-  input#btn_submit_signup {
+  input#btn_submit_signup,
+  input#btn_submit_login {
     margin-left: 5%;
   }
   legend#legend_signup {
@@ -190,7 +191,8 @@
     margin-left: 5%;
     margin-right: 5%;
   }
-  input#btn_submit_signup {
+  input#btn_submit_signup,
+  input#btn_submit_login {
     margin-left: 5%;
   }
   legend#legend_signup {
@@ -268,7 +270,8 @@
   span#messageSignup {
     font-size: 14px;
   }
-  input#btn_submit_signup {
+  input#btn_submit_signup,
+  input#btn_submit_login {
     margin-left: 5%;
   }
   legend#legend_signup {

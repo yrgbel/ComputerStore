@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNet.Identity
+
+@if (Request.IsAuthenticated)
+{
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <img width="22" src="~/Content/images/account.png" />
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li class="disabled"><a>@User.Identity.GetUserName()</a></li>
+            <li role="separator" class="divider"></li>
+            <li>
+                <a href="javascript:document.getElementById('logoutForm').submit()">
+                Logout
+                @using (Html.BeginForm("Logout", "Auth", new { area = "Auth" }, FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                }
+                </a>
+            </li>
+        </ul>
+
+    </li>
+
+}
+else
+{
+        <li><a href="@Url.Action("Login", new { controller = "Auth", area = "Auth"})"><span class="glyphicon glyphicon-user user-icon"></span>Log in</a></li>
+}

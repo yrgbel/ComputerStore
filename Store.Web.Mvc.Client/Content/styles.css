@@ -176,3 +176,12 @@ nav {
 #signup-user {
   width: 33%;
 }
+.content_position {
+  padding: 68px 0 80px 0;
+}
+#bootstrap-overrides .input_checkbox {
+  margin-right: 10px;
+}
+#bootstrap-overrides .cancel_bold_font {
+  font-weight: normal;
+}

@@ -15,6 +15,9 @@ namespace Store.Web.Mvc.Client.Areas.Auth
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute("", "signup", defaults: new { controller = "Auth", action = "Signup", area = "Auth" });
+            context.MapRoute("", "login", defaults: new { controller = "Auth", action = "Login", area = "Auth" });
+            context.MapRoute("", "logout", defaults: new { controller = "Auth", action = "Logout", area = "Auth" });
+            context.MapRoute("", "logout/confirm", defaults: new { controller = "Auth", action = "LogoutConfirm", area = "Auth" });
         }
     }
 }

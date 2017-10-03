@@ -29,7 +29,7 @@
                             <span class="glyphicon glyphicon-menu-hamburger"></span>
                         </button>
 
-                        <a href="@Url.Action("Index", "Home")" class="navbar-brand logo">
+                        <a href="@Url.Action("Index", "Home", new { controller = "Home", area = "" })" class="navbar-brand logo">
                             <img src="~/Content/images/logo.png" id="logo" alt="logo">
                         </a>
                     </div>
@@ -51,9 +51,9 @@
                                     <li><a href="#">Separated link</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-divider">
-                            <li><a href="#"><span class="glyphicon glyphicon-user user-icon"></span>Log in</a></li>
-                            <li class="nav-divider">
+                            <li class="nav-divider" />
+                            @Html.Partial("_LoginPartial")
+                            <li class="nav-divider" />
                         </ul>
                     </div>
                     <div class="search_panel">

@@ -1,0 +1,46 @@
+﻿@model Store.Web.Mvc.Client.Areas.Auth.ViewModels.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content_position">
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <legend id="legend_signup">Login</legend>
+
+        @Html.ValidationSummary(true,
+            "The credentials provided are incorrect.",
+            new { @class = "alert alert-danger" })
+
+        <ul id="signup-user" class="list-unstyled">
+            <li class="form-group">
+                @Html.LabelFor(model => model.Email)
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "field-validation-error" })
+            </li>
+            <li class="form-group">
+                @Html.LabelFor(model => model.Password)
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "field-validation-error" })
+            </li>
+            <li class="form-group">
+                <label for="checkbox">
+                    <input class="input_checkbox" type="checkbox" value="" id="checkbox" name="checkbox">
+                    <span class="cancel_bold_font">Remember Me?</span>
+                </label>
+                <input name="RememberMe" id="RememberMe" type="hidden" value="false" />
+            </li>
+        </ul>
+    </fieldset>
+
+    <input id="btn_submit_login" class="btn btn-primary" type="submit" value="Login" />
+    <span> &nbsp;&nbsp;</span>
+    @Html.ActionLink("Sign up", "Signup")<span>&nbsp;&nbsp;if you don't have an account.</span>
+}
+</div>
