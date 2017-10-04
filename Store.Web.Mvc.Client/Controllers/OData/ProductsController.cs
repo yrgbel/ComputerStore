@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.OData;
+using System.Web.OData.Query;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Store.Data.Contracts;
@@ -27,7 +28,7 @@ namespace Store.Web.Mvc.Client.Controllers.OData
                 .Any(p => p.ProductId == key);
         }
 
-        [EnableQuery]
+        [EnableQuery(AllowedQueryOptions = AllowedQueryOptions.All)]
         public IQueryable<ProductDetailsDto> Get()
         {
             var dbset = (DbSet<Product>)Uow.Products.GetAll();
@@ -42,7 +43,7 @@ namespace Store.Web.Mvc.Client.Controllers.OData
                 .ProjectTo<ProductDetailsDto>();
         }
 
-        [EnableQuery]
+        [EnableQuery(AllowedQueryOptions = AllowedQueryOptions.All)]
         public async Task<IHttpActionResult> Get([FromODataUri] int key)
         {
             var result = await Uow.Products.GetByIdAsync(key);

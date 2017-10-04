@@ -12,5 +12,10 @@ namespace Store.Web.Mvc.Client.Controllers
         {
             return View();
         }
+
+        public ActionResult GetTop15DiscountProducts()
+        {
+            return PartialView("_Products");
+        }
     }
 }

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Store.DomainModel.DTOs.ProductDetailsDto>
+
+@foreach (var product in Model)
+{
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="param_block">
+                <a href="">
+                    <img src="@product.ProductImageSmallUrl" alt="@product.ProductName"/>
+                </a>
+                <h3><a href="">@product.ProductName</a></h3>
+                <p><a href="">@product.ProductDescription</a></p>
+            </div>
+        </div>
+    </div>
+}

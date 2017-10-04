@@ -1,7 +1,20 @@
-﻿body {
+﻿html {
+  position: relative;
+  min-height: 100%;
+}
+body {
   font-family: "RalewayRegular", sans-serif;
   font-size: 16px;
   min-width: 320px;
+  margin-bottom: 30px;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  background-color: #f5f5f5;
 }
 /*BUTTONS*/
 .my_btn {
@@ -184,4 +197,13 @@ nav {
 }
 #bootstrap-overrides .cancel_bold_font {
   font-weight: normal;
+}
+#bootstrap-overrides #account_ref {
+  padding: 4px 0 5px 8px;
+}
+#bootstrap-overrides #account_menu_caret {
+  margin-left: 0;
+}
+#footer > p {
+  text-align: center;
 }
