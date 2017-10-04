@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using AutoMapper;
+using Store.DomainModel.DTOs;
 using Store.Model.IdentityEntities;
 using Store.Model.POCO_Entities;
 using Store.Web.Mvc.Client.Areas.Auth.ViewModels;
+using Product = Store.DomainModel.DTOs.Product;
 
 namespace Store.Web.Mvc.Client.Infrastructure.MappingProfiles
 {
@@ -33,7 +35,7 @@ namespace Store.Web.Mvc.Client.Infrastructure.MappingProfiles
                 .ForMember(u => u.SignupDate, cfg => cfg.MapFrom(s => DateTime.Now))
                 .ForMember(u => u.Customer, cfg => cfg.MapFrom(s => Mapper.Map<Customer>(s)));
 
-
+            CreateMap<Product, Model.POCO_Entities.Product>();
 
         }
     }

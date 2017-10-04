@@ -11,6 +11,7 @@ using AutoMapper.QueryableExtensions;
 using Store.Data.Contracts;
 using Store.DomainModel.DTOs;
 using Store.Model.POCO_Entities;
+using Product = Store.Model.POCO_Entities.Product;
 
 namespace Store.Web.Mvc.Client.Controllers.OData
 {
@@ -31,7 +32,7 @@ namespace Store.Web.Mvc.Client.Controllers.OData
         [EnableQuery(AllowedQueryOptions = AllowedQueryOptions.All)]
         public IQueryable<ProductDetailsDto> Get()
         {
-            var dbset = (DbSet<Product>)Uow.Products.GetAll();
+            var dbset = (DbSet<Model.POCO_Entities.Product>)Uow.Products.GetAll();
             // eager loading
             return dbset
                 .Include(p => p.ProductBrand)

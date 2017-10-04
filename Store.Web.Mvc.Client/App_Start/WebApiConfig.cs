@@ -19,7 +19,7 @@ namespace Store.Web.Mvc.Client
             builder.EntitySet<ProductDetailsDto>("Products").EntityType.Name = "Product";
             //builder.EntitySet<ProductBrandDto>("ProductBrands").EntityType.Name = "ProductBrand";
 
-            config.Select().Expand().Filter().OrderBy().MaxTop(null).Count();
+            //config.Select().Expand().Filter().OrderBy().MaxTop(null).Count();
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",
                 routePrefix: "odata",

@@ -9,7 +9,7 @@ namespace Store.Web.Mvc.Client
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(null,
+           routes.MapRoute(null,
                 "",
                 new
                 {
