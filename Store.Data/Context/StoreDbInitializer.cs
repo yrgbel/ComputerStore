@@ -205,7 +205,7 @@ namespace Store.Data.Context
                         ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId
                     };
 
-                    context.Database.ExecuteSqlCommand("DBCC CHECKIDENT ('Product', RESEED, 100);");
+                    context.Database.ExecuteSqlCommand("DBCC CHECKIDENT ('Product', RESEED, 101);");
 
                     context.Products.AddRange(new[] {
                         productNotebookHp6735S, productNotebookAppleMacBookPro15TouchBar2016,

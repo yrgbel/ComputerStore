@@ -24,18 +24,18 @@ namespace Store.Web.Mvc.Client.Controllers
                             Request.Url.Host +
                             (Request.Url.IsDefaultPort ? "" : ":" + Request.Url.Port);
 
-            Uri uri = new Uri(domain + "/products");
+            Uri uri = new Uri(domain + "/odata");
             Container context = new Container(uri);
 
-            IQueryable<Product> products = context.Products
+            var products = context.Products
                 .OrderByDescending(p => p.productDiscount)
-                .Take(count.Value);
+                .Take(count.Value).ToList();
 
 
-            var productEntities = Mapper.Map<IQueryable<Model.POCO_Entities.Product>>(products);
-            var productDtos = Mapper.Map<IQueryable<ProductDetailsDto>>(productEntities);
+            var productEntities = Mapper.Map<IEnumerable<Model.POCO_Entities.Product>>(products);
+            var productDtos = Mapper.Map<IEnumerable<ProductDetailsDto>>(productEntities);
 
-            return PartialView("_Products", productDtos.ToList());
+            return PartialView("_Products", productDtos);
         }
     }
 }

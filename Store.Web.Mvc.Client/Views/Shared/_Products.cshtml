@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Store.DomainModel.DTOs.ProductDetailsDto>
+
+<h2>Top discount</h2>
+<div class="row">
+    @{ int counter = 0; }
+    @foreach (var product in Model)
+    {
+        
+        <div class="col-xs-12 col-sm-4 col-md-3">
+            <div class="param_block">
+                <a href="" class="thumbnail">
+                    <img src="@product.ProductImageSmallUrl" alt="@product.ProductName"/>
+                </a>
+                <h3><a href="">@product.ProductName</a>
+                </h3>
+                <p><a href="">@product.ProductDescription</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Optional: clear the SM and MD cols if their content doesn't match in height -->
+        if (++counter % 3 == 0)
+        {
+            <div class="clearfix visible-sm-block visible-md-block"></div>
+        }
+    }
+</div>
