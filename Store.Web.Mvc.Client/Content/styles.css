@@ -149,6 +149,7 @@ nav {
   padding-top: 95px;
 }
 .param_block {
+  position: relative;
   text-align: center;
   margin-bottom: 50px;
 }
@@ -202,4 +203,18 @@ nav {
 }
 #footer > p {
   text-align: center;
+}
+.name_product_in_list {
+  height: 3em;
+}
+.discount {
+  position: absolute;
+  bottom: 132px;
+  right: -6px;
+}
+.discount_value {
+    position: absolute;
+    top: 21px;
+    left: 12px;
+    color: azure;
 }

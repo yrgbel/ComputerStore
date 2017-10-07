@@ -17,7 +17,7 @@ namespace Store.Web.Mvc.Client.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult TopDiscountProducts(int? count = 15)
+        public ActionResult TopDiscountProducts(int count = 15)
         {
             string domain = Request.Url.Scheme +
                             Uri.SchemeDelimiter +
@@ -28,8 +28,10 @@ namespace Store.Web.Mvc.Client.Controllers
             Container context = new Container(uri);
 
             var products = context.Products
+                .Where(p => p.productDiscount > 0)
                 .OrderByDescending(p => p.productDiscount)
-                .Take(count.Value).ToList();
+                .Take(count)
+                .ToList();
 
 
             var productEntities = Mapper.Map<IEnumerable<Model.POCO_Entities.Product>>(products);

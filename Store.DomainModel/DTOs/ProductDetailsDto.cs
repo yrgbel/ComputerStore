@@ -18,5 +18,12 @@ namespace Store.DomainModel.DTOs
         public string ProductCategoryName { get; set; } // ProductCategoryName
         public string ProductImageLargeUrl { get; set; }
         public string ProductImageSmallUrl { get; set; }
+
+        public string GetDiscountInfoFull => ProductDiscount == null || ProductDiscount == 0
+            ? string.Empty : GetDiscountInfoShort + " OFF";
+        // The non-breaking space has character code 160: "\u00A0"
+        public string GetDiscountInfoShort => ProductDiscount == null || ProductDiscount == 0
+            ? string.Empty : 
+            $"{(ProductDiscount.ToString().Length == 1 ? "\u00A0" : "")}{ProductDiscount}%";
     }
 }

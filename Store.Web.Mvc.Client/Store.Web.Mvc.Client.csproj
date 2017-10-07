@@ -220,6 +220,7 @@
     <Content Include="Content\images\categories\monoblock.svg" />
     <Content Include="Content\images\categories\notebook.svg" />
     <Content Include="Content\images\categories\tablet.svg" />
+    <Content Include="Content\images\discount.svg" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\products\original\notebooks\AppleMacBookPro13TouchBar2016.jpeg" />
     <Content Include="Content\images\products\cropped\notebooks\AppleMacBookPro13TouchBar2016.jpeg" />
