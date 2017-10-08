@@ -16,7 +16,7 @@ using Product = Store.Model.POCO_Entities.Product;
 namespace Store.Web.Mvc.Client.Controllers.OData
 {
     //[Authorize]
-    public class ProductsController : ODataControllerBase
+    public class ProductsController : BaseControllerOData
     {
         public ProductsController(IStoreUow uow)
         {

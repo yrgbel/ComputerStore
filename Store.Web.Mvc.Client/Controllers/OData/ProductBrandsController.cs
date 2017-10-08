@@ -4,16 +4,18 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.OData;
+using System.Web.OData.Query;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Store.Data.Contracts;
 using Store.DomainModel.DTOs;
 using Store.Model.POCO_Entities;
+using ProductBrand = Store.Model.POCO_Entities.ProductBrand;
 
 namespace Store.Web.Mvc.Client.Controllers.OData
 {
     //[Authorize]
-    public class ProductBrandsController : ODataControllerBase
+    public class ProductBrandsController : BaseControllerOData
     {
         public ProductBrandsController(IStoreUow uow)
         {
@@ -26,8 +28,8 @@ namespace Store.Web.Mvc.Client.Controllers.OData
                 .Any(p => p.ProductBrandId == key);
         }
 
-        
-        [EnableQuery]
+
+        [EnableQuery(AllowedQueryOptions = AllowedQueryOptions.All)]
         public IQueryable<ProductBrandDto> GetProductBrands()
         {
             return Uow.ProductBrands.GetAll()
@@ -35,8 +37,8 @@ namespace Store.Web.Mvc.Client.Controllers.OData
                 .ProjectTo<ProductBrandDto>();//use Automapper.QueryableExtension namespace
         }
 
-        
-        [EnableQuery]
+
+        [EnableQuery(AllowedQueryOptions = AllowedQueryOptions.All)]
         public async Task<IHttpActionResult> GetProductBrand([FromODataUri] int key)
         {
             var result = await Uow.ProductBrands.GetByIdAsync(key);

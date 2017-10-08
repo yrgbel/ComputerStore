@@ -1,6 +1,6 @@
 ﻿namespace Store.Web.Mvc.Client.Controllers.OData
 {
-    public class CustomerPhoneController : ODataControllerBase
+    public class CustomerPhoneController : BaseControllerOData
     {
 
     }

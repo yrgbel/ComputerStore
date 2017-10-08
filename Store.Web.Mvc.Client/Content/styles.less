@@ -1,6 +1,7 @@
 ﻿@color-menu: #1A3668;
 @color-categories: #285E8E;
 @color-warning: #D13232;
+@nav-background-color: #FFC92A;
 
 html {
     position: relative;
@@ -104,8 +105,7 @@ nav {
     color: #fff;
 }
 
-.search_panel
-{
+.search_panel {
     min-width: 30px;
     margin: 0 0;
 }
@@ -119,9 +119,9 @@ nav {
     display: block;
 }
 
-.navbar-nav > li > a {
-     padding-top: 5px; 
-     padding-bottom: 5px; 
+#first-navbar.navbar-nav > li > a {
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .item_divider {
@@ -177,20 +177,19 @@ nav {
     margin-bottom: 50px;
 }
 
-.user-icon
-{
+.user-icon {
     padding-right: 0.2em;
 }
 
 /*--->PARAMETRS SECTION*/
 .params_s {
-    padding-top: 95px;
+    padding-top: 2em;
 }
 
 .param_block {
     position: relative;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .param_block i {
@@ -204,8 +203,7 @@ nav {
     font-size: 18px;
 }
 
-.categories_img
-{
+.categories_img {
     display: inline-block;
     width: 80px;
 }
@@ -225,6 +223,7 @@ nav {
 #bootstrap-overrides .param_block > h3 {
     margin-top: 0;
 }
+
 .param_block:hover .categories_fill {
     fill: saturate(lighten(@color-categories, 5%), 20%);
 }
@@ -258,12 +257,45 @@ nav {
     text-align: center;
 }
 
-.name_product_in_list{
-    height: 3em;
+.name_product_in_list {
+    height: 1.5em;
 }
 
 .discount {
     position: absolute;
     top: -15px;
     right: -6px;
+}
+
+.discount_value {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    color: azure;
+}
+
+#bootstrap-overrides .category_row {
+    margin-top: 48px;
+}
+
+.brands_header {
+    color: @color-menu;
+    font-weight: bolder;
+}
+
+.breadcrumbs_brands {
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    line-height: 1.5em;
+    background-color: @nav-background-color;
+}
+
+#bootstrap-overrides .breadcrumb > li + li:nth-child(2)::before {
+    content: "";
+    color: @color-menu;
+}
+
+#bootstrap-overrides .breadcrumb > li + li::before {
+    color: @color-menu;
 }

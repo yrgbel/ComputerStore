@@ -1,13 +1,12 @@
 ﻿@model IEnumerable<Store.DomainModel.DTOs.ProductDetailsDto>
 
-<h2>Top discount</h2>
 <div class="row">
     @foreach (var product in Model)
     {
         
         <div class="col-xs-6 col-sm-4 col-md-3">
             <div class="param_block">
-                @if (@product.GetDiscountInfoFull != "")
+                @if (product.GetDiscountInfoFull != "")
                 {
                     <div class="discount">
                         <div class="discount_value">

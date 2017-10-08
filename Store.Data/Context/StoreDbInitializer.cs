@@ -83,7 +83,8 @@ namespace Store.Data.Context
                         ProductManufacturerId = productManufacturerEntity.ProductManufacturerId,
                         ProductCategoryId = computerEquipmentEntity.ProductCategoryId,
                         ProductSubCategory = subCategoryNotebooksEntity,
-                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId
+                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId,
+                        ProductOrderCount = 140
                     };
 
                     Product productNotebookAppleMacBookPro15TouchBar2016 = new Product
@@ -100,7 +101,8 @@ namespace Store.Data.Context
                         ProductManufacturerId = productManufacturerEntity.ProductManufacturerId,
                         ProductCategoryId = computerEquipmentEntity.ProductCategoryId,
                         ProductSubCategory = subCategoryNotebooksEntity,
-                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId
+                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId,
+                        ProductOrderCount = 101
                     };
 
                     Product productNotebookHpPavilionDv6 = new Product
@@ -117,7 +119,8 @@ namespace Store.Data.Context
                         ProductManufacturerId = productManufacturerEntity.ProductManufacturerId,
                         ProductCategoryId = computerEquipmentEntity.ProductCategoryId,
                         ProductSubCategory = subCategoryNotebooksEntity,
-                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId
+                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId,
+                        ProductOrderCount = 266
                     };
 
                     Product productNotebookHpEnvy = new Product
@@ -134,7 +137,8 @@ namespace Store.Data.Context
                         ProductManufacturerId = productManufacturerEntity.ProductManufacturerId,
                         ProductCategoryId = computerEquipmentEntity.ProductCategoryId,
                         ProductSubCategory = subCategoryNotebooksEntity,
-                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId
+                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId,
+                        ProductOrderCount = 168
                     };
 
                     Product productNotebookHpProBook440G4 = new Product
@@ -151,7 +155,8 @@ namespace Store.Data.Context
                         ProductManufacturerId = productManufacturerEntity.ProductManufacturerId,
                         ProductCategoryId = computerEquipmentEntity.ProductCategoryId,
                         ProductSubCategory = subCategoryNotebooksEntity,
-                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId
+                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId,
+                        ProductOrderCount = 344
                     };
 
                     Product productNotebookAppleMacBookPro15Retina = new Product
@@ -168,7 +173,8 @@ namespace Store.Data.Context
                         ProductManufacturerId = productManufacturerEntity.ProductManufacturerId,
                         ProductCategoryId = computerEquipmentEntity.ProductCategoryId,
                         ProductSubCategory = subCategoryNotebooksEntity,
-                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId
+                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId,
+                        ProductOrderCount = 416
                     };
 
                     Product productNotebookAppleMacBookPro15TouchBar = new Product
@@ -185,7 +191,8 @@ namespace Store.Data.Context
                         ProductManufacturerId = productManufacturerEntity.ProductManufacturerId,
                         ProductCategoryId = computerEquipmentEntity.ProductCategoryId,
                         ProductSubCategory = subCategoryNotebooksEntity,
-                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId
+                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId,
+                        ProductOrderCount = 195
                     };
 
                     Product productNotebookAppleMacBookPro13 = new Product
@@ -202,10 +209,11 @@ namespace Store.Data.Context
                         ProductManufacturerId = productManufacturerEntity.ProductManufacturerId,
                         ProductCategoryId = computerEquipmentEntity.ProductCategoryId,
                         ProductSubCategory = subCategoryNotebooksEntity,
-                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId
+                        ProductSubCategoryId = subCategoryNotebooksEntity.ProductSubCategoryId,
+                        ProductOrderCount = 115
                     };
 
-                    context.Database.ExecuteSqlCommand("DBCC CHECKIDENT ('Product', RESEED, 101);");
+                    context.Database.ExecuteSqlCommand("DBCC CHECKIDENT ('Product', RESEED, 100);");
 
                     context.Products.AddRange(new[] {
                         productNotebookHp6735S, productNotebookAppleMacBookPro15TouchBar2016,

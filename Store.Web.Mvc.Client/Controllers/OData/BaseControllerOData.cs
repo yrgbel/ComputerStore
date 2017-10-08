@@ -3,7 +3,7 @@ using Store.Data.Contracts;
 
 namespace Store.Web.Mvc.Client.Controllers.OData
 {
-    public abstract class ODataControllerBase : ODataController
+    public abstract class BaseControllerOData : ODataController
     {
         protected IStoreUow Uow { get; set; }
 

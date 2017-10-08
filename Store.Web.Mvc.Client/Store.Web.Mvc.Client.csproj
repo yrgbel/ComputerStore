@@ -191,10 +191,14 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Auth\Views\web.config" />
     <Content Include="Areas\Auth\Views\Auth\Signup.cshtml" />
-    <Content Include="Areas\Auth\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Auth\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Auth\Views\Auth\Login.cshtml" />
     <Content Include="Areas\Auth\Views\Auth\LogoutConfirm.cshtml" />
+    <Content Include="Areas\Store\Views\web.config" />
+    <Content Include="Areas\Home\Views\web.config" />
+    <Content Include="Areas\Store\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Home\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Auth\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -307,15 +311,19 @@
     <Compile Include="Areas\Auth\Controllers\AuthController.cs" />
     <Compile Include="Areas\Auth\ViewModels\LoginModel.cs" />
     <Compile Include="Areas\Auth\ViewModels\SignupModel.cs" />
+    <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
+    <Compile Include="Areas\Store\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Store\StoreAreaRegistration.cs" />
     <Compile Include="Connected Services\ImageServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\StoreODataService\StoreProxy.cs" />
+    <Compile Include="Controllers\BaseControllerStore.cs" />
     <Compile Include="Controllers\OData\CustomerController.cs" />
     <Compile Include="Controllers\OData\CustomerPhoneController.cs" />
-    <Compile Include="Controllers\OData\ODataControllerBase.cs" />
+    <Compile Include="Controllers\OData\BaseControllerOData.cs" />
     <Compile Include="Controllers\OData\OrderDetailController.cs" />
     <Compile Include="Controllers\OData\OrderProductController.cs" />
     <Compile Include="Controllers\OData\ProductBrandsController.cs" />
@@ -323,7 +331,7 @@
     <Compile Include="Controllers\OData\ProductManufacturersController.cs" />
     <Compile Include="Controllers\OData\ProductsController.cs" />
     <Compile Include="Controllers\OData\ProductSubCategoriesController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -334,11 +342,11 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Areas\Home\Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\_Products.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Areas\Store\Views\Shared\_Products.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -351,6 +359,11 @@
     <Folder Include="Areas\Admin\Views\Admin\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Auth\Models\" />
+    <Folder Include="Areas\Auth\Views\Shared\" />
+    <Folder Include="Areas\Home\Models\" />
+    <Folder Include="Areas\Home\Views\Shared\" />
+    <Folder Include="Areas\Store\Models\" />
+    <Folder Include="Areas\Store\Views\Product\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\app\" />
     <Folder Include="ViewModels\" />

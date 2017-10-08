@@ -29,13 +29,13 @@
                             <span class="glyphicon glyphicon-menu-hamburger"></span>
                         </button>
 
-                        <a href="@Url.Action("Index", "Home", new { controller = "Home", area = "" })" class="navbar-brand logo">
+                        <a href="/" class="navbar-brand logo">
                             <img src="~/Content/images/logo.png" id="logo" alt="logo">
                         </a>
                     </div>
 
                     <div class="collapse navbar-collapse navbar-right menu" id="top_menu">
-                        <ul class="nav navbar-nav navbar-right menu">
+                        <ul id="first-navbar" class="nav navbar-nav navbar-right menu">
                             <li class="nav-divider">
                             <li><a href="#">CONTACT US</a></li>
                             <li class="nav-divider"></li>
@@ -52,7 +52,7 @@
                                 </ul>
                             </li>
                             <li class="nav-divider" />
-                            @Html.Partial("_LoginPartial")
+                            @Html.Partial("_Login")
                             <li class="nav-divider" />
                         </ul>
                     </div>
@@ -65,7 +65,6 @@
                         </form>
                     </div>
                 </div>
-                <div class="top_line"></div>
             </div>
         </nav>
     </header>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 04.10.2017 19:58:25
+// Generation date: 08.10.2017 10:40:17
 namespace Store.DomainModel.DTOs
 {
     /// <summary>
@@ -50,13 +50,15 @@ namespace Store.DomainModel.DTOs
         /// <param name="productId">Initial value of productId.</param>
         /// <param name="productPrice">Initial value of productPrice.</param>
         /// <param name="productQuanity">Initial value of productQuanity.</param>
+        /// <param name="productOrderCount">Initial value of productOrderCount.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static Product CreateProduct(int productId, decimal productPrice, decimal productQuanity)
+        public static Product CreateProduct(int productId, decimal productPrice, decimal productQuanity, int productOrderCount)
         {
             Product product = new Product();
             product.productId = productId;
             product.productPrice = productPrice;
             product.productQuanity = productQuanity;
+            product.productOrderCount = productOrderCount;
             return product;
         }
         /// <summary>
@@ -368,6 +370,156 @@ namespace Store.DomainModel.DTOs
         partial void OnproductImageSmallUrlChanging(string value);
         partial void OnproductImageSmallUrlChanged();
         /// <summary>
+        /// There are no comments for Property productOrderCount in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public int productOrderCount
+        {
+            get
+            {
+                return this._productOrderCount;
+            }
+            set
+            {
+                this.OnproductOrderCountChanging(value);
+                this._productOrderCount = value;
+                this.OnproductOrderCountChanged();
+                this.OnPropertyChanged("productOrderCount");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private int _productOrderCount;
+        partial void OnproductOrderCountChanging(int value);
+        partial void OnproductOrderCountChanged();
+        /// <summary>
+        /// This event is raised when the value of the property is changed
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// The value of the property is changed
+        /// </summary>
+        /// <param name="property">property name</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for ProductBrandSingle in the schema.
+    /// </summary>
+    public partial class ProductBrandSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<ProductBrand>
+    {
+        /// <summary>
+        /// Initialize a new ProductBrandSingle object.
+        /// </summary>
+        public ProductBrandSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+            : base(context, path) {}
+
+        /// <summary>
+        /// Initialize a new ProductBrandSingle object.
+        /// </summary>
+        public ProductBrandSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+            : base(context, path, isComposable) {}
+
+        /// <summary>
+        /// Initialize a new ProductBrandSingle object.
+        /// </summary>
+        public ProductBrandSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<ProductBrand> query)
+            : base(query) {}
+
+    }
+    /// <summary>
+    /// There are no comments for ProductBrand in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// productBrandId
+    /// </KeyProperties>
+    [global::Microsoft.OData.Client.Key("productBrandId")]
+    public partial class ProductBrand : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new ProductBrand object.
+        /// </summary>
+        /// <param name="productBrandId">Initial value of productBrandId.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public static ProductBrand CreateProductBrand(int productBrandId)
+        {
+            ProductBrand productBrand = new ProductBrand();
+            productBrand.productBrandId = productBrandId;
+            return productBrand;
+        }
+        /// <summary>
+        /// There are no comments for Property productBrandId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public int productBrandId
+        {
+            get
+            {
+                return this._productBrandId;
+            }
+            set
+            {
+                this.OnproductBrandIdChanging(value);
+                this._productBrandId = value;
+                this.OnproductBrandIdChanged();
+                this.OnPropertyChanged("productBrandId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private int _productBrandId;
+        partial void OnproductBrandIdChanging(int value);
+        partial void OnproductBrandIdChanged();
+        /// <summary>
+        /// There are no comments for Property productBrandName in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public string productBrandName
+        {
+            get
+            {
+                return this._productBrandName;
+            }
+            set
+            {
+                this.OnproductBrandNameChanging(value);
+                this._productBrandName = value;
+                this.OnproductBrandNameChanged();
+                this.OnPropertyChanged("productBrandName");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private string _productBrandName;
+        partial void OnproductBrandNameChanging(string value);
+        partial void OnproductBrandNameChanged();
+        /// <summary>
+        /// There are no comments for Property productBrandCountry in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public string productBrandCountry
+        {
+            get
+            {
+                return this._productBrandCountry;
+            }
+            set
+            {
+                this.OnproductBrandCountryChanging(value);
+                this._productBrandCountry = value;
+                this.OnproductBrandCountryChanged();
+                this.OnPropertyChanged("productBrandCountry");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private string _productBrandCountry;
+        partial void OnproductBrandCountryChanging(string value);
+        partial void OnproductBrandCountryChanged();
+        /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
@@ -424,6 +576,7 @@ namespace Store.DomainModel.DTOs
         /// <param name="productId">Initial value of productId.</param>
         /// <param name="productPrice">Initial value of productPrice.</param>
         /// <param name="productQuanity">Initial value of productQuanity.</param>
+        /// <param name="productOrderCount">Initial value of productOrderCount.</param>
         /// <param name="orderProductId">Initial value of orderProductId.</param>
         /// <param name="orderDetailsQuantity">Initial value of orderDetailsQuantity.</param>
         /// <param name="orderDetailsPrice">Initial value of orderDetailsPrice.</param>
@@ -431,6 +584,7 @@ namespace Store.DomainModel.DTOs
         public static OrderDetailDto CreateOrderDetailDto(int productId, 
                     decimal productPrice, 
                     decimal productQuanity, 
+                    int productOrderCount, 
                     long orderProductId, 
                     decimal orderDetailsQuantity, 
                     decimal orderDetailsPrice)
@@ -439,6 +593,7 @@ namespace Store.DomainModel.DTOs
             orderDetailDto.productId = productId;
             orderDetailDto.productPrice = productPrice;
             orderDetailDto.productQuanity = productQuanity;
+            orderDetailDto.productOrderCount = productOrderCount;
             orderDetailDto.orderProductId = orderProductId;
             orderDetailDto.orderDetailsQuantity = orderDetailsQuantity;
             orderDetailDto.orderDetailsPrice = orderDetailsPrice;
@@ -562,6 +717,29 @@ namespace Store.DomainModel.DTOs
             return new global::Store.DomainModel.DTOs.ProductSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
         /// <summary>
+        /// Get an entity of type global::Store.DomainModel.DTOs.ProductBrand as global::Store.DomainModel.DTOs.ProductBrandSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="keys">dictionary with the names and values of keys</param>
+        public static global::Store.DomainModel.DTOs.ProductBrandSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Store.DomainModel.DTOs.ProductBrand> source, global::System.Collections.Generic.Dictionary<string, object> keys)
+        {
+            return new global::Store.DomainModel.DTOs.ProductBrandSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::Store.DomainModel.DTOs.ProductBrand as global::Store.DomainModel.DTOs.ProductBrandSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="productBrandId">The value of productBrandId</param>
+        public static global::Store.DomainModel.DTOs.ProductBrandSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Store.DomainModel.DTOs.ProductBrand> source,
+            int productBrandId)
+        {
+            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
+            {
+                { "productBrandId", productBrandId }
+            };
+            return new global::Store.DomainModel.DTOs.ProductBrandSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
         /// Get an entity of type global::Store.DomainModel.DTOs.OrderDetailDto as global::Store.DomainModel.DTOs.OrderDetailDtoSingle specified by key from an entity set
         /// </summary>
         /// <param name="source">source entity set</param>
@@ -643,12 +821,37 @@ namespace Default
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::Store.DomainModel.DTOs.Product> _Products;
         /// <summary>
+        /// There are no comments for ProductBrands in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::Store.DomainModel.DTOs.ProductBrand> ProductBrands
+        {
+            get
+            {
+                if ((this._ProductBrands == null))
+                {
+                    this._ProductBrands = base.CreateQuery<global::Store.DomainModel.DTOs.ProductBrand>("ProductBrands");
+                }
+                return this._ProductBrands;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::Store.DomainModel.DTOs.ProductBrand> _ProductBrands;
+        /// <summary>
         /// There are no comments for Products in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public void AddToProducts(global::Store.DomainModel.DTOs.Product product)
         {
             base.AddObject("Products", product);
+        }
+        /// <summary>
+        /// There are no comments for ProductBrands in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public void AddToProductBrands(global::Store.DomainModel.DTOs.ProductBrand productBrand)
+        {
+            base.AddObject("ProductBrands", productBrand);
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private abstract class GeneratedEdmModel
@@ -677,6 +880,15 @@ namespace Default
         <Property Name=""productCategoryName"" Type=""Edm.String"" />
         <Property Name=""productImageLargeUrl"" Type=""Edm.String"" />
         <Property Name=""productImageSmallUrl"" Type=""Edm.String"" />
+        <Property Name=""productOrderCount"" Type=""Edm.Int32"" Nullable=""false"" />
+      </EntityType>
+      <EntityType Name=""ProductBrand"">
+        <Key>
+          <PropertyRef Name=""productBrandId"" />
+        </Key>
+        <Property Name=""productBrandId"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""productBrandName"" Type=""Edm.String"" />
+        <Property Name=""productBrandCountry"" Type=""Edm.String"" />
       </EntityType>
       <EntityType Name=""OrderDetailDto"" BaseType=""Store.DomainModel.DTOs.Product"">
         <Property Name=""orderProductId"" Type=""Edm.Int64"" Nullable=""false"" />
@@ -688,6 +900,7 @@ namespace Default
     <Schema Namespace=""Default"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
       <EntityContainer Name=""Container"">
         <EntitySet Name=""Products"" EntityType=""Store.DomainModel.DTOs.Product"" />
+        <EntitySet Name=""ProductBrands"" EntityType=""Store.DomainModel.DTOs.ProductBrand"" />
       </EntityContainer>
     </Schema>
   </edmx:DataServices>

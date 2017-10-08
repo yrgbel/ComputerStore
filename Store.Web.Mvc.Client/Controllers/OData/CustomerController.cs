@@ -13,7 +13,7 @@ using Store.Model.POCO_Entities;
 
 namespace Store.Web.Mvc.Client.Controllers.OData
 {
-    public class CustomerController : ODataControllerBase
+    public class CustomerController : BaseControllerOData
     {
         public CustomerController(IStoreUow uow)
         {

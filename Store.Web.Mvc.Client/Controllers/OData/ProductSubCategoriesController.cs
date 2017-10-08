@@ -13,7 +13,7 @@ using Store.Model.POCO_Entities;
 namespace Store.Web.Mvc.Client.Controllers.OData
 {
     //[Authorize]
-    public class ProductSubCategoriesController : ODataControllerBase
+    public class ProductSubCategoriesController : BaseControllerOData
     {
         public ProductSubCategoriesController(IStoreUow uow)
         {

@@ -1,4 +1,4 @@
-html {
+﻿html {
   position: relative;
   min-height: 100%;
 }
@@ -42,6 +42,7 @@ header {
   height: 60px;
   /*background-image: url('images/banner.jpg');*/
   background-color: #fff;
+  -webkit-background-size: cover;
   background-size: cover;
 }
 nav {
@@ -96,7 +97,7 @@ nav {
 #bootstrap-overrides div.form-group {
   display: block;
 }
-.navbar-nav > li > a {
+#first-navbar.navbar-nav > li > a {
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -109,6 +110,9 @@ nav {
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   background-color: #1A3668;
+  background-image: -webkit-linear-gradient(top, #1A3668 0%, #1A3668 100%);
+  background-image: -o-linear-gradient(top, #1A3668 0%, #1A3668 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1A3668), to(#1A3668));
   background-image: linear-gradient(to bottom, #1A3668 0%, #1A3668 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
   background-repeat: repeat-x;
@@ -146,12 +150,12 @@ nav {
 }
 /*--->PARAMETRS SECTION*/
 .params_s {
-  padding-top: 95px;
+  padding-top: 2em;
 }
 .param_block {
   position: relative;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .param_block i {
   font-size: 70px;
@@ -205,16 +209,37 @@ nav {
   text-align: center;
 }
 .name_product_in_list {
-  height: 3em;
+  height: 1.5em;
 }
 .discount {
   position: absolute;
-  bottom: 132px;
+  top: -15px;
   right: -6px;
 }
 .discount_value {
-    position: absolute;
-    top: 21px;
-    left: 12px;
-    color: azure;
+  position: absolute;
+  top: 20px;
+  left: 12px;
+  color: azure;
+}
+#bootstrap-overrides .category_row {
+  margin-top: 48px;
+}
+.brands_header {
+  color: #1A3668;
+  font-weight: bolder;
+}
+.breadcrumbs_brands {
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  line-height: 1.5em;
+  background-color: #FFC92A;
+}
+#bootstrap-overrides .breadcrumb > li + li:nth-child(2)::before {
+  content: "";
+  color: #1A3668;
+}
+#bootstrap-overrides .breadcrumb > li + li::before {
+  color: #1A3668;
 }

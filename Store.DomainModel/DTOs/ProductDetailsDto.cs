@@ -18,6 +18,7 @@ namespace Store.DomainModel.DTOs
         public string ProductCategoryName { get; set; } // ProductCategoryName
         public string ProductImageLargeUrl { get; set; }
         public string ProductImageSmallUrl { get; set; }
+        public int ProductOrderCount { get; set; } 
 
         public string GetDiscountInfoFull => ProductDiscount == null || ProductDiscount == 0
             ? string.Empty : GetDiscountInfoShort + " OFF";

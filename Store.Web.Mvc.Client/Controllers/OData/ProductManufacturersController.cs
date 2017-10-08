@@ -14,7 +14,7 @@ using Store.Model.POCO_Entities;
 namespace Store.Web.Mvc.Client.Controllers.OData
 {
     //[Authorize]
-    public class ProductManufacturersController : ODataControllerBase
+    public class ProductManufacturersController : BaseControllerOData
     {
         public ProductManufacturersController(IStoreUow uow)
         {

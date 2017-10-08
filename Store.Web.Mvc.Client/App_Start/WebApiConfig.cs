@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Configuration;
+using System.Web.Http;
 using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
 using Store.DomainModel.DTOs;
@@ -17,12 +18,12 @@ namespace Store.Web.Mvc.Client
             builder.EnableLowerCamelCase();
 
             builder.EntitySet<ProductDetailsDto>("Products").EntityType.Name = "Product";
-            //builder.EntitySet<ProductBrandDto>("ProductBrands").EntityType.Name = "ProductBrand";
+            builder.EntitySet<ProductBrandDto>("ProductBrands").EntityType.Name = "ProductBrand";
 
             //config.Select().Expand().Filter().OrderBy().MaxTop(null).Count();
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",
-                routePrefix: "odata",
+                routePrefix: ConfigurationManager.AppSettings["routePrefix"],
                 model: builder.GetEdmModel());
         }
     }

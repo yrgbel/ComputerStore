@@ -14,15 +14,6 @@ namespace Store.Web.Mvc.Client
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-
-            routes.MapRoute(null,
-                "",
-                new
-                {
-                    controller = "Home",
-                    action = "Index"
-                }
-            );
         }
     }
 }
