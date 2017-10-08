@@ -35,7 +35,8 @@ namespace Store.Web.Mvc.Client.Infrastructure.MappingProfiles
                 .ForMember(u => u.SignupDate, cfg => cfg.MapFrom(s => DateTime.Now))
                 .ForMember(u => u.Customer, cfg => cfg.MapFrom(s => Mapper.Map<Customer>(s)));
 
-            CreateMap<Product, Model.POCO_Entities.Product>();
+            // Mapping proxy OData client
+            CreateMap<Product, ProductDetailsDto>();
 
         }
     }

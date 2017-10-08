@@ -31,6 +31,7 @@ namespace Store.Web.Mvc.Client.App_Start
                 //.IncludeDirectory("~/Scripts/lib", "*.js", searchSubdirectories: false));
                 .Include(
                     "~/Scripts/lib/bootstrap.js",
+                    "~/Scripts/lib/bootstrap-slider.js",
                     "~/Scripts/lib/json2.js", // IE7 needs this
 
                     // jQuery plugins
@@ -56,6 +57,7 @@ namespace Store.Web.Mvc.Client.App_Start
             bundles.Add(new StyleBundle("~/Content/css")
                 .Include(
                     "~/Content/bootstrap.css",
+                    "~/Content/bootstrap-slider.css",
                     "~/Content/bootstrap-theme.css",
                     "~/Content/toastr.css",
                     "~/Content/toastr-responsive.css"));

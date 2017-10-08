@@ -17,10 +17,16 @@
                              alt="@product.GetDiscountInfoFull"/>
                     </div>
                 }
-                <a href="" class="thumbnail">
+                
+                @{ var refProduct = Url.Action("Product", new
+                   {
+                       controller = "Product", area = "Store", id = product.ProductId
+                   });}
+
+                <a href="@refProduct" class="thumbnail">
                     <img src="@product.ProductImageSmallUrl" alt="@product.ProductName"/>
                 </a>
-                <h3 class="name_product_in_list"><a href="">@product.ProductName</a>
+                <h3 class="name_product_in_list"><a href="@refProduct">@product.ProductName</a>
                 </h3>
             </div>
         </div>

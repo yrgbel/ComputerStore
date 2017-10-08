@@ -225,21 +225,12 @@ nav {
 #bootstrap-overrides .category_row {
   margin-top: 48px;
 }
-.brands_header {
-  color: #1A3668;
-  font-weight: bolder;
+.row-backlink {
+  padding: 10px 0;
 }
-.breadcrumbs_brands {
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
-  line-height: 1.5em;
-  background-color: #FFC92A;
+.price_product {
+  font-size: 21px;
 }
-#bootstrap-overrides .breadcrumb > li + li:nth-child(2)::before {
-  content: "";
-  color: #1A3668;
-}
-#bootstrap-overrides .breadcrumb > li + li::before {
-  color: #1A3668;
+.img_product {
+  width: 400px;
 }

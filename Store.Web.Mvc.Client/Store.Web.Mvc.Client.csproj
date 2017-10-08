@@ -199,6 +199,7 @@
     <Content Include="Areas\Home\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Auth\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Store\Views\Product\Product.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -210,6 +211,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Content\bootstrap-slider.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\fonts.css">
@@ -286,6 +288,7 @@
     </None>
     <Content Include="Connected Services\StoreODataService\ConnectedService.json" />
     <None Include="Scripts\lib\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\lib\bootstrap-slider.js" />
     <Content Include="Scripts\lib\json2.js" />
     <Content Include="Scripts\lib\jquery-3.1.1.js" />
     <Content Include="Scripts\lib\jquery-3.1.1.slim.js" />
@@ -347,6 +350,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Login.cshtml" />
     <Content Include="Areas\Store\Views\Shared\_Products.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -363,7 +367,6 @@
     <Folder Include="Areas\Home\Models\" />
     <Folder Include="Areas\Home\Views\Shared\" />
     <Folder Include="Areas\Store\Models\" />
-    <Folder Include="Areas\Store\Views\Product\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\app\" />
     <Folder Include="ViewModels\" />

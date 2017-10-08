@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using Default;
 using Ninject;
 using Store.Data;
 using Store.Data.Contracts;

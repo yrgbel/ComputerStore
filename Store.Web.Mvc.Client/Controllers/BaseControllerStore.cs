@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Web.Mvc;
+using Default;
 
 namespace Store.Web.Mvc.Client.Controllers
 {
@@ -13,5 +14,7 @@ namespace Store.Web.Mvc.Client.Controllers
             (Request.Url.IsDefaultPort ? "" : ":" + Request.Url.Port);
 
         protected Uri CurrentODateUri => new Uri(CurrentDomainPath + "/" + ConfigurationManager.AppSettings["routePrefix"]);
+
+        protected Container Context => new Container(CurrentODateUri);
     }
 }

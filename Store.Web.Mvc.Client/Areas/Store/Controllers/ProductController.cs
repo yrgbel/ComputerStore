@@ -2,10 +2,8 @@
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
-using Default;
 using Store.DomainModel.DTOs;
 using Store.Web.Mvc.Client.Controllers;
-using PocoEntities = Store.Model.POCO_Entities;
 
 namespace Store.Web.Mvc.Client.Areas.Store.Controllers
 {
@@ -14,16 +12,13 @@ namespace Store.Web.Mvc.Client.Areas.Store.Controllers
         [ChildActionOnly]
         public ActionResult TopDiscountProducts(int count = 15)
         {
-            Container context = new Container(CurrentODateUri);
-
-            var products = context.Products
+            var products = Context.Products
                 .Where(p => p.productDiscount > 0)
                 .OrderByDescending(p => p.productDiscount)
                 .Take(count)
                 .ToList();
 
-            var productEntities = Mapper.Map<IEnumerable<PocoEntities.Product>>(products);
-            var productDtos = Mapper.Map<IEnumerable<ProductDetailsDto>>(productEntities);
+            var productDtos = Mapper.Map<IEnumerable<ProductDetailsDto>>(products);
 
             return PartialView("_Products", productDtos);
         }
@@ -31,18 +26,17 @@ namespace Store.Web.Mvc.Client.Areas.Store.Controllers
         [ChildActionOnly]
         public ActionResult MostPopularProducts(int count = 20)
         {
-            Container context = new Container(CurrentODateUri);
-
-            var products = context.Products
+            var products = Context.Products
                 .OrderByDescending(p => p.productOrderCount)
                 .Take(count)
                 .ToList();
 
-            var productEntities = Mapper.Map<IEnumerable<PocoEntities.Product>>(products);
-            var productDtos = Mapper.Map<IEnumerable<ProductDetailsDto>>(productEntities);
+            var productDtos = Mapper.Map<IEnumerable<ProductDetailsDto>>(products);
 
             return PartialView("_Products", productDtos);
         }
+
+        #region NavBrands (commented)
 
         //public ActionResult NavBrands(int count = 4)
         //{
@@ -58,5 +52,24 @@ namespace Store.Web.Mvc.Client.Areas.Store.Controllers
 
         //    return PartialView("_NavBrands", brands);
         //}
+
+        #endregion
+
+        public ActionResult Product(int id)
+        {
+            Product product = Context.Products
+                .Where(p => p.productId == id)
+                .ToList()
+                .FirstOrDefault();
+
+            if (product == null)
+            {
+                return View("Error");
+            }
+
+            var productDto = Mapper.Map<ProductDetailsDto>(product);
+
+            return View("Product", productDto);
+        }
     }
 }

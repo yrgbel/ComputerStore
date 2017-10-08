@@ -20,6 +20,8 @@ namespace Store.Web.Mvc.Client.Areas.Store
                 "Store/{controller}/{action}/{id}",
                 new { id = UrlParameter.Optional }
             );
+
+            context.MapRoute("", "products/{id}", defaults: new { controller = "Product", action = "Product", area = "Store" });
         }
     }
 }

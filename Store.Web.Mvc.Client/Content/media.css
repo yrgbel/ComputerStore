@@ -1,4 +1,4 @@
-﻿/*==========  Desktop First Method  ==========*/
+/*==========  Desktop First Method  ==========*/
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */
 /* Small Devices, Tablets */
@@ -6,22 +6,12 @@
   /*Disable Animation on Mobile Devices*/
   .animated {
     /*CSS transitions*/
-    -o-transition-property: none !important;
-    -moz-transition-property: none !important;
-    -ms-transition-property: none !important;
-    -webkit-transition-property: none !important;
     transition-property: none !important;
     /*CSS transforms*/
-    -o-transform: none !important;
-    -moz-transform: none !important;
-    -ms-transform: none !important;
     -webkit-transform: none !important;
     transform: none !important;
     /*CSS animations*/
     -webkit-animation: none !important;
-    -moz-animation: none !important;
-    -o-animation: none !important;
-    -ms-animation: none !important;
     animation: none !important;
   }
   #logo {
@@ -85,7 +75,8 @@
   }
   /* view menu with search box */
   .navbar-collapse.in {
-    columns: 1;
+    -webkit-columns: 1;
+            columns: 1;
   }
   .nav .nav-divider {
     margin: 0 0;
@@ -109,8 +100,6 @@
     margin-left: 5%;
   }
   .breadcrumbs_brands {
-    -moz-border-radius: 0;
-    -webkit-border-radius: 0;
     border-radius: 0;
     font-size: 0.9em;
   }
@@ -178,7 +167,8 @@
   }
   /* view menu with search box */
   .navbar-collapse.in {
-    columns: 1;
+    -webkit-columns: 1;
+            columns: 1;
   }
   .nav .nav-divider {
     margin: 0 0;
@@ -208,8 +198,6 @@
     font-size: 13px;
   }
   .breadcrumbs_brands {
-    -moz-border-radius: 0;
-    -webkit-border-radius: 0;
     border-radius: 0;
     font-size: 0.8em;
   }
@@ -260,7 +248,8 @@
   }
   /* view menu with search box */
   .navbar-collapse.in {
-    columns: 1;
+    -webkit-columns: 1;
+            columns: 1;
   }
   .nav .nav-divider {
     margin: 0 0;
@@ -290,8 +279,6 @@
     margin-left: 5%;
   }
   .breadcrumbs_brands {
-    -moz-border-radius: 0;
-    -webkit-border-radius: 0;
     border-radius: 0;
     font-size: 0.6em;
   }
