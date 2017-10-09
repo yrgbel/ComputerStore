@@ -220,6 +220,7 @@
     <Content Include="Content\fonts.min.css">
       <DependentUpon>fonts.css</DependentUpon>
     </Content>
+    <Content Include="Content\fotorama.css" />
     <Content Include="Content\images\account.png" />
     <Content Include="Content\images\banner.jpg" />
     <Content Include="Content\images\categories\ebook.svg" />
@@ -289,6 +290,7 @@
     <Content Include="Connected Services\StoreODataService\ConnectedService.json" />
     <None Include="Scripts\lib\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\lib\bootstrap-slider.js" />
+    <Content Include="Scripts\lib\fotorama.js" />
     <Content Include="Scripts\lib\json2.js" />
     <Content Include="Scripts\lib\jquery-3.1.1.js" />
     <Content Include="Scripts\lib\jquery-3.1.1.slim.js" />

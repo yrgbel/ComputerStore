@@ -16,7 +16,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-5 col-xs-push-1">
-                <div class="thumbnail">
+                <div class="thumbnail fotorama">
                     <img class="img_product" src="@Model.ProductImageLargeUrl" alt="@Model.ProductName">
                 </div>
             </div>
@@ -43,9 +43,8 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <input type="text"
+                                <input class ="slider" type="text"
                                        name="countToCart"
-                                       data-provide="slider"
                                        data-slider-min="1"
                                        data-slider-max="@Math.Round(Model.ProductQuanity)"
                                        data-slider-step="1"
@@ -72,4 +71,26 @@
         </div>
     </div>
 </div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+        $(function () {
+            var slider = {};
+
+            var countProductsList = $("#count")
+                .change(function(e) {
+                    slider.bootstrapSlider('setValue', countProductsList.val());
+                });
+
+            // Instantiate a slider
+            slider = $("input.slider")
+                .bootstrapSlider()
+                .change(function (e) {
+                    countProductsList.val(slider.bootstrapSlider('getValue'));
+                });
+        });
+    </script>
+}
 

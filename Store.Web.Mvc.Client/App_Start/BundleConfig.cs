@@ -31,7 +31,6 @@ namespace Store.Web.Mvc.Client.App_Start
                 //.IncludeDirectory("~/Scripts/lib", "*.js", searchSubdirectories: false));
                 .Include(
                     "~/Scripts/lib/bootstrap.js",
-                    "~/Scripts/lib/bootstrap-slider.js",
                     "~/Scripts/lib/json2.js", // IE7 needs this
 
                     // jQuery plugins
@@ -44,7 +43,9 @@ namespace Store.Web.Mvc.Client.App_Start
                     "~/Scripts/lib/underscore.js", // functional framework
                     "~/Scripts/lib/moment.js",
                     //"~/Scripts/lib/amplify.*",
-                    "~/Scripts/lib/toastr.js"// bublle notification
+                    "~/Scripts/lib/toastr.js",// bublle notification
+                    "~/Scripts/lib/bootstrap-slider.js",// slider for count products and etc.
+                    "~/Scripts/lib/fotorama.js"//image viewer for view image in full size 
                 ));
             //bundles.Add(new ScriptBundle("~/bundles/jsmocks")
             //    .IncludeDirectory("~/Scripts/app/mock", "*.js", searchSubdirectories: false));
@@ -60,6 +61,7 @@ namespace Store.Web.Mvc.Client.App_Start
                     "~/Content/bootstrap-slider.css",
                     "~/Content/bootstrap-theme.css",
                     "~/Content/toastr.css",
+                    "~/Content/fotorama.css",
                     "~/Content/toastr-responsive.css"));
                
             // Custom CSS files
