@@ -200,6 +200,20 @@
     <Content Include="Areas\Auth\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Store\Views\Product\Product.cshtml" />
+    <Content Include="bower_components\photoswipe\.bower.json" />
+    <Content Include="bower_components\photoswipe\bower.json" />
+    <Content Include="bower_components\photoswipe\component.json" />
+    <Content Include="bower_components\photoswipe\LICENSE" />
+    <Content Include="bower_components\photoswipe\package.json" />
+    <Content Include="bower_components\photoswipe\photoswipe.json" />
+    <Content Include="bower_components\photoswipe\README.md" />
+    <Content Include="bower_components\photoswipe\src\css\default-skin\default-skin-svg.sketch\Data" />
+    <Content Include="bower_components\photoswipe\src\css\default-skin\default-skin-svg.sketch\metadata" />
+    <Content Include="bower_components\photoswipe\src\css\default-skin\default-skin-svg.sketch\version" />
+    <Content Include="bower_components\photoswipe\src\css\default-skin\default-skin.psd" />
+    <Content Include="bower_components\photoswipe\src\css\default-skin\default-skin.scss" />
+    <Content Include="bower_components\photoswipe\src\css\main.scss" />
+    <Content Include="bower_components\photoswipe\src\css\_main-settings.scss" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -211,16 +225,41 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="bower_components\photoswipe\dist\default-skin\default-skin.css" />
+    <Content Include="bower_components\photoswipe\dist\default-skin\default-skin.png" />
+    <Content Include="bower_components\photoswipe\dist\default-skin\default-skin.svg" />
+    <Content Include="bower_components\photoswipe\dist\default-skin\preloader.gif" />
+    <Content Include="bower_components\photoswipe\dist\photoswipe-ui-default.js" />
+    <Content Include="bower_components\photoswipe\dist\photoswipe-ui-default.min.js" />
+    <Content Include="bower_components\photoswipe\dist\photoswipe.css" />
+    <Content Include="bower_components\photoswipe\dist\photoswipe.js" />
+    <Content Include="bower_components\photoswipe\dist\photoswipe.min.js" />
+    <Content Include="bower_components\photoswipe\Gruntfile.js" />
+    <Content Include="bower_components\photoswipe\src\css\default-skin\default-skin.png" />
+    <Content Include="bower_components\photoswipe\src\css\default-skin\default-skin.svg" />
+    <Content Include="bower_components\photoswipe\src\css\default-skin\preloader.gif" />
+    <Content Include="bower_components\photoswipe\src\js\core.js" />
+    <Content Include="bower_components\photoswipe\src\js\desktop-zoom.js" />
+    <Content Include="bower_components\photoswipe\src\js\framework-bridge.js" />
+    <Content Include="bower_components\photoswipe\src\js\gestures.js" />
+    <Content Include="bower_components\photoswipe\src\js\history.js" />
+    <Content Include="bower_components\photoswipe\src\js\items-controller.js" />
+    <Content Include="bower_components\photoswipe\src\js\show-hide-transition.js" />
+    <Content Include="bower_components\photoswipe\src\js\tap.js" />
+    <Content Include="bower_components\photoswipe\src\js\ui\photoswipe-ui-default.js" />
     <Content Include="Content\bootstrap-slider.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\photoswipe\default-skin\default-skin.css" />
+    <Content Include="Content\photoswipe\default-skin\default-skin.png" />
+    <Content Include="Content\photoswipe\default-skin\default-skin.svg" />
+    <Content Include="Content\photoswipe\default-skin\preloader.gif" />
     <Content Include="Content\fonts.css">
       <DependentUpon>fonts.less</DependentUpon>
     </Content>
     <Content Include="Content\fonts.min.css">
       <DependentUpon>fonts.css</DependentUpon>
     </Content>
-    <Content Include="Content\fotorama.css" />
     <Content Include="Content\images\account.png" />
     <Content Include="Content\images\banner.jpg" />
     <Content Include="Content\images\categories\ebook.svg" />
@@ -290,12 +329,14 @@
     <Content Include="Connected Services\StoreODataService\ConnectedService.json" />
     <None Include="Scripts\lib\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\lib\bootstrap-slider.js" />
-    <Content Include="Scripts\lib\fotorama.js" />
     <Content Include="Scripts\lib\json2.js" />
     <Content Include="Scripts\lib\jquery-3.1.1.js" />
     <Content Include="Scripts\lib\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\lib\bootstrap.js" />
     <Content Include="Scripts\lib\modernizr-2.8.3.js" />
+    <Content Include="Content\photoswipe\photoswipe.css" />
+    <Content Include="Scripts\lib\photoswipe-ui-default.js" />
+    <Content Include="Scripts\lib\photoswipe.js" />
     <Content Include="Scripts\lib\underscore.js" />
     <Content Include="Scripts\lib\moment.js" />
     <Content Include="Scripts\lib\toastr.js" />

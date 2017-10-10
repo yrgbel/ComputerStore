@@ -234,3 +234,6 @@ nav {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+img.img_product:hover {
+  cursor: zoom-in;
+}

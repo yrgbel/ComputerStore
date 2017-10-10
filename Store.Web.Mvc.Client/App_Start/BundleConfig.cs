@@ -45,7 +45,8 @@ namespace Store.Web.Mvc.Client.App_Start
                     //"~/Scripts/lib/amplify.*",
                     "~/Scripts/lib/toastr.js",// bublle notification
                     "~/Scripts/lib/bootstrap-slider.js",// slider for count products and etc.
-                    "~/Scripts/lib/fotorama.js"//image viewer for view image in full size 
+                    "~/Scripts/lib/photoswipe.js",
+                    "~/Scripts/lib/photoswipe-ui-default.js"//image viewer for view image in full size 
                 ));
             //bundles.Add(new ScriptBundle("~/bundles/jsmocks")
             //    .IncludeDirectory("~/Scripts/app/mock", "*.js", searchSubdirectories: false));
@@ -61,7 +62,8 @@ namespace Store.Web.Mvc.Client.App_Start
                     "~/Content/bootstrap-slider.css",
                     "~/Content/bootstrap-theme.css",
                     "~/Content/toastr.css",
-                    "~/Content/fotorama.css",
+                    "~/Content/photoswipe/photoswipe.css",
+                    "~/Content/photoswipe/default-skin/default-skin.css",
                     "~/Content/toastr-responsive.css"));
                
             // Custom CSS files
