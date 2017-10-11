@@ -1,4 +1,5 @@
 ﻿@using System.Activities.Expressions
+@using Store.Infrastructure
 @model Store.DomainModel.DTOs.ProductDetailsDto
 
 @{
@@ -148,33 +149,38 @@
                 .bootstrapSlider()
                 .change(function (e) {
                     countProductsList.val(slider.bootstrapSlider('getValue'));
+                });
+
+            //Photoswipe
+            var openPhotoSwipe = function() {
+                var pswpElement = document.querySelectorAll('.pswp')[0];
+
+                var productImages = $("img.img_product");
+
+                // build items array
+                var items = [];
+
+                //get image dimensions
+                alert(productImages.first().attr("src"));
+                productImages.each(function () {
+                    @{ var dimensionsObj = ImageHelper.GetDimensions(Model.ProductImageLargeUrl); }
+                    items.push({ src: $(this).attr('src'), w: @dimensionsObj.Width, h: @dimensionsObj.Height});
 				});
 
-			//Photoswipe
-	        var openPhotoSwipe = function() {
-		        var pswpElement = document.querySelectorAll('.pswp')[0];
+                // define options (if needed)
+                var options = {
+                    // history & focus options are disabled on CodePen
+                    history: false,
+                    focus: false,
 
-		        // build items array
-				var items = [];
+                    showAnimationDuration: 0,
+                    hideAnimationDuration: 0
 
-				$("img.img_product").each(function () {
-					items.push({ src: $(this).attr('src'), w: 984, h: 1024 }); 
-				});
+                };
 
-		        // define options (if needed)
-		        var options = {
-			        // history & focus options are disabled on CodePen        
-			        history: false,
-			        focus: false,
-
-			        showAnimationDuration: 0,
-			        hideAnimationDuration: 0
-
-		        };
-
-				var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-		        gallery.init();
-			};
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+                gallery.init();
+            };
 
 			document.getElementsByClassName('img_product')[0].onclick = openPhotoSwipe;
 		});

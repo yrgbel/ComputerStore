@@ -1,4 +1,4 @@
-html {
+﻿html {
   position: relative;
   min-height: 100%;
 }
@@ -42,6 +42,7 @@ header {
   height: 60px;
   /*background-image: url('images/banner.jpg');*/
   background-color: #fff;
+  -webkit-background-size: cover;
   background-size: cover;
 }
 nav {
@@ -51,7 +52,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 1000;
 }
 .menu {
   /*list-style-type: none;*/
@@ -109,6 +110,9 @@ nav {
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   background-color: #1A3668;
+  background-image: -webkit-linear-gradient(top, #1A3668 0%, #1A3668 100%);
+  background-image: -o-linear-gradient(top, #1A3668 0%, #1A3668 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1A3668), to(#1A3668));
   background-image: linear-gradient(to bottom, #1A3668 0%, #1A3668 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
   background-repeat: repeat-x;
