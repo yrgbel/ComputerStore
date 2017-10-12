@@ -16,7 +16,7 @@
     
     <div class="container-fluid">
         <div class="row">
-	        <div class="col-xs-5 col-xs-push-1">
+	        <div class="col-xs-5 col-xs-push-1 product_activeImg">
 		        <div class="thumbnail">
 			        <img class="img_product" src="@Model.ProductImageLargeUrl" alt="@Model.ProductName">
 		        </div>
@@ -80,7 +80,7 @@
 		        </div>
 
 	        </div>
-            <div class="col-xs-5 col-xs-offset-1">
+            <div class="col-xs-5 col-xs-offset-1 description_product">
                 <h2>@Model.ProductName</h2>
                 <p>@Model.ProductDescription</p>
                 
@@ -161,10 +161,8 @@
                 var items = [];
 
                 //get image dimensions
-                alert(productImages.first().attr("src"));
                 productImages.each(function () {
-                    @{ var dimensionsObj = ImageHelper.GetDimensions(Model.ProductImageLargeUrl); }
-                    items.push({ src: $(this).attr('src'), w: @dimensionsObj.Width, h: @dimensionsObj.Height});
+                    items.push({ src: $(this).attr('src'), w: this.naturalWidth, h: this.naturalHeight });
 				});
 
                 // define options (if needed)

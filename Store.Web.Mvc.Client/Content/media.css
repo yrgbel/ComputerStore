@@ -201,6 +201,15 @@
     border-radius: 0;
     font-size: 0.8em;
   }
+  .product_activeImg {
+    width: 100%;
+    left: 5%;
+    right: 5%;
+  }
+  .description_product {
+    left: 5%;
+    right: 5%;
+  }
 }
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px) {
@@ -281,6 +290,15 @@
   .breadcrumbs_brands {
     border-radius: 0;
     font-size: 0.6em;
+  }
+  .product_activeImg {
+    width: 100%;
+    left: 5%;
+    right: 5%;
+  }
+  .description_product {
+    left: 5%;
+    right: 5%;
   }
 }
 /*==========  Mobile First Method  ==========*/

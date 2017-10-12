@@ -328,6 +328,7 @@
     </None>
     <Content Include="Connected Services\StoreODataService\ConnectedService.json" />
     <None Include="Scripts\lib\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\lib\bootstrap-slider.js" />
     <Content Include="Scripts\lib\json2.js" />
     <Content Include="Scripts\lib\jquery-3.1.1.js" />
@@ -411,7 +412,6 @@
     <Folder Include="Areas\Home\Views\Shared\" />
     <Folder Include="Areas\Store\Models\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\app\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>

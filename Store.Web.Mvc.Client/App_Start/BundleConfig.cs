@@ -21,6 +21,10 @@ namespace Store.Web.Mvc.Client.App_Start
             bundles.Add(new ScriptBundle("~/bundles/modernizr")
                 .Include("~/Scripts/lib/modernizr-{version}.js"));
 
+            // Custom scripts
+            bundles.Add(new ScriptBundle("~/bundles/app")
+                .Include("~/Scripts/app/app.js"));
+
             // jQuery
             bundles.Add(new ScriptBundle("~/bundles/jquery",
                     "//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
