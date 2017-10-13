@@ -2,6 +2,7 @@
 @color-categories: #285E8E;
 @color-warning: #D13232;
 @nav-background-color: #FFC92A;
+@color-font-nav: #666666;
 
 html {
     position: relative;
@@ -53,7 +54,6 @@ body {
 /*HEADER*/
 header {
     height: 60px;
-    /*background-image: url('images/banner.jpg');*/
     background-color: #fff;
     -webkit-background-size: cover;
     background-size: cover;
@@ -70,24 +70,17 @@ nav {
 }
 
 .menu {
-    /*list-style-type: none;*/
-    margin: 0;
+    margin-left: -15px;
     padding: 0;
 }
 
-/*.menu li {
-    display: inline-block;
-    padding: 0 30px;
-}*/
-
 .menu > li > a:hover, .nav > li > a:focus {
-    /*text-decoration: none;*/
     background-color: @color-menu;
     color: #FFF;
 }
 
 .menu li a {
-    color: #666666;
+    color: @color-font-nav;
     text-transform: uppercase;
     font-family: 'RalewayBold', sans-serif;
 }
@@ -153,7 +146,7 @@ nav {
 
 .top_line {
     height: 1px;
-    background-color: #666666;
+    background-color: @color-font-nav;
 }
 
 .logo {
@@ -161,7 +154,7 @@ nav {
 }
 
 .title_block {
-    color: #666666;
+    color: @color-font-nav;
     text-align: center;
     margin-top: 200px;
 }
@@ -298,4 +291,25 @@ nav {
 img.img_product:hover
 {
     cursor: zoom-in;
+}
+
+#bootstrap-overrides .nav > li.cart_style > a:focus {
+    text-decoration: none;
+    background-color: transparent;
+    color: #666666;
+}
+
+#bootstrap-overrides .nav > li.cart_style > a:hover {
+    text-decoration: underline;
+    background-color: transparent;
+    color: #666666;
+}
+
+.cart_icon {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.badge_count_product {
+    margin-top: -0.5em;
 }
