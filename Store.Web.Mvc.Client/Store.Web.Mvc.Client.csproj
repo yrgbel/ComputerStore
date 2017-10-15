@@ -74,9 +74,6 @@
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.OData.Client, Version=6.18.0.10905, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.OData.Client.6.18.0\lib\net40\Microsoft.OData.Client.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.OData.Core, Version=6.18.0.10905, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.OData.Core.6.18.0\lib\portable-net45+win+wpa81\Microsoft.OData.Core.dll</HintPath>
     </Reference>
@@ -326,7 +323,6 @@
     <None Include="Connected Services\ImageServiceReference\ImageService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Connected Services\StoreODataService\ConnectedService.json" />
     <None Include="Scripts\lib\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\lib\bootstrap-slider.js" />
@@ -359,6 +355,7 @@
     <Compile Include="Areas\Auth\ViewModels\LoginModel.cs" />
     <Compile Include="Areas\Auth\ViewModels\SignupModel.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
+    <Compile Include="Areas\Store\Controllers\CartController.cs" />
     <Compile Include="Areas\Store\Controllers\ProductController.cs" />
     <Compile Include="Areas\Store\StoreAreaRegistration.cs" />
     <Compile Include="Connected Services\ImageServiceReference\Reference.cs">
@@ -366,8 +363,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\StoreODataService\StoreProxy.cs" />
     <Compile Include="Controllers\BaseControllerStore.cs" />
+    <Compile Include="Controllers\OData\CartsController.cs" />
+    <Compile Include="Controllers\OData\CartItemsController.cs" />
     <Compile Include="Controllers\OData\CustomerController.cs" />
     <Compile Include="Controllers\OData\CustomerPhoneController.cs" />
     <Compile Include="Controllers\OData\BaseControllerOData.cs" />
@@ -382,6 +380,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Attributes\AjaxOnlyAttribute.cs" />
+    <Compile Include="Infrastructure\Binders\CartModelBinder.cs" />
+    <Compile Include="Infrastructure\CurrentCart.cs" />
     <Compile Include="Infrastructure\MappingProfiles\MappingModelViewProfile.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

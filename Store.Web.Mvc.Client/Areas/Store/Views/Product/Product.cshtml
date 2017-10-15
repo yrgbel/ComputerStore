@@ -83,12 +83,11 @@
                     <form>
                         <input type="hidden" name="id" id="id" value="@Model.ProductId" />
                         <table>
-                            @*<tr>
-                                    <td style="width: 300px; height: 35px;"><i class="@starClass"></i></td>
-                                    <td colspan="2">
-                                        <div id="cart-alert" class="alert alert-success alert-add-cart">&nbsp;</div>
-                                    </td>
-                                </tr>*@
+                            <tr>
+                                <td colspan="2">
+                                    <div id="cart-alert" class="alert alert-success alert-add-cart"></div>
+                                </td>
+                            </tr>
                             <tr>
                                 <td>Price:</td>
                                 <td><span class="price_product">@Math.Round(Model.ProductPrice, 2)$</span></td>
@@ -105,7 +104,7 @@
                                            data-slider-max="@Math.Round(Model.ProductQuanity)"
                                            data-slider-step="1"
                                            data-slider-value="1"
-                                           data-slider-tooltip="show" />
+                                           data-slider-tooltip="show"/>
                                 </td>
                             </tr>
                             <tr>
@@ -177,7 +176,70 @@
             };
 
 			document.getElementsByClassName('img_product')[0].onclick = openPhotoSwipe;
-		});
+        });
+
+        // see "Pro JavaScript and jQuery Patterns" package for details
+
+        // ** namespace pattern
+        // ** revealing module pattern
+        // ** singleton pattern
+        Patterns.namespace("Store").Product = (function () {
+
+            var utils = Patterns.Store.Utils;
+            var app = Patterns.Store.App;
+
+            var addToCart = function(event) {
+
+                @*var isUserAuthorized = @User.Identity.IsAuthenticated.ToString().ToLower();
+
+                if (!isUserAuthorized) {
+                    $("#cart-alert").html("Add item to cart can only registered users.")
+                        .removeClass("").addClass("").fadeIn(500).delay(4500).fadeOut(2000);
+                    return utils.stopEvent(event);
+                }*@
+
+                // display success message
+                var count = parseInt($("#cartcount").text(), 10);
+                var items = count > 1 ? " items" : " item";
+                $("#cart-alert").html("Added " + count + items + " to your cart.")
+                    .fadeIn(500).delay(2500).fadeOut(2000);
+
+                // refreshes cart display at top
+                app.updateCartOnPage(1);
+
+                var $form = $(this);
+
+                var options = {
+                    url: "/store/cart",
+                    type: "POST",
+                    data: $form.serialize()
+                };
+
+                 //** fire and forget -- CQRS pattern
+                $.ajax(options);
+
+                return utils.stopEvent(event);
+            }
+
+            var activateControls = function () {
+                $("form").submit(addToCart);
+            };
+
+            var start = function () {
+                activateControls();
+            };
+
+            // the revealing part of revealing module pattern
+            return { start: start };
+        })();
+
+
+        $(function () {
+
+            // ** facade pattern
+            product = Patterns.Store.Product;
+            product.start();
+        });
 
     </script>
 }

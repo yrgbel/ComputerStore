@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\CartDto.cs" />
+    <Compile Include="DTOs\CartItemDto.cs" />
     <Compile Include="DTOs\CustomerPhoneDto.cs" />
     <Compile Include="DTOs\CustomerDto.cs" />
     <Compile Include="DTOs\OrderDetailDto.cs" />
@@ -60,6 +62,7 @@
     <Compile Include="DTOs\ProductManufacturerDto.cs" />
     <Compile Include="DTOs\ProductSubCategoryDto.cs" />
     <Compile Include="Helpers\DataSettingsProvider.cs" />
+    <Compile Include="Model\Cart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

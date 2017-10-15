@@ -1,5 +1,3 @@
-using Store.DomainModel.Helpers;
-
 namespace Store.DomainModel.DTOs
 {
     public class ProductDetailsDto

@@ -4,7 +4,9 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using AutoMapper;
 using Store.Data.MappingProfiles;
+using Store.DomainModel.Model;
 using Store.Web.Mvc.Client.App_Start;
+using Store.Web.Mvc.Client.Infrastructure.Binders;
 using Store.Web.Mvc.Client.Infrastructure.MappingProfiles;
 
 namespace Store.Web.Mvc.Client
@@ -25,6 +27,8 @@ namespace Store.Web.Mvc.Client
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
         }
     }
 }

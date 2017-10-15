@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Repositories\ICartItemRepository.cs" />
+    <Compile Include="Repositories\ICartRepository.cs" />
     <Compile Include="Repositories\ICustomerPhoneRepository.cs" />
     <Compile Include="Repositories\ICustomerRepository.cs" />
     <Compile Include="Repositories\IOrderDetailRepository.cs" />

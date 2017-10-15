@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Specialized;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web;
-using System.Web.Configuration;
 using System.Web.Mvc;
-using System.Web.Security;
 using AutoMapper;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Store.Data.IdentityModels;
 using Store.Model.IdentityEntities;
 using Store.Web.Mvc.Client.Areas.Auth.ViewModels;
-using Store.Web.Mvc.Client.Infrastructure;
 
 namespace Store.Web.Mvc.Client.Areas.Auth.Controllers
 {
@@ -23,6 +16,8 @@ namespace Store.Web.Mvc.Client.Areas.Auth.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+
+        #region Constructors
 
         public AuthController()
         {
@@ -33,6 +28,8 @@ namespace Store.Web.Mvc.Client.Areas.Auth.Controllers
             UserManager = userManager;
             SignInManager = signInManager;
         }
+
+        #endregion
 
         public ApplicationSignInManager SignInManager
         {

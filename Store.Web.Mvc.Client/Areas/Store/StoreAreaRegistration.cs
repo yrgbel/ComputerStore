@@ -17,11 +17,13 @@ namespace Store.Web.Mvc.Client.Areas.Store
             // Default route for child actions.
             context.MapRoute(
                 "StoreDefault",
-                "Store/{controller}/{action}/{id}",
+                "store/{controller}/{action}/{id}",
                 new { id = UrlParameter.Optional }
             );
 
             context.MapRoute("", "products/{id}", defaults: new { controller = "Product", action = "Product", area = "Store" });
+            context.MapRoute("", "cart", defaults: new { controller = "Cart", action = "Cart", area = "Store" });
+
         }
     }
 }

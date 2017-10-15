@@ -43,18 +43,20 @@ Patterns.namespace("Store").App = (function () {
     var updateCartOnPage = function (delta) {
 
         //update cart display
-        var count = parseInt($("#cartcount").val(), 10) + delta;
+
+        var cartCount = $("#cartcount");
+        var count = parseInt(cartCount.text(), 10) + delta;
         if (count < 0) count = 0;
 
-        $("#cartcount").val(count);
+        cartCount.text(count);
 
-        if (count == 0) {
-            $("#countshow").html("");
-            $("#thecart").css("background-color", "");
+        if (count === 0) {
+            cartCount.removeClass("progress-bar-danger")
+                     .css("color", "#666666");
         }
         else {
-            $("#countshow").html("(" + count + ")");
-            $("#thecart").css("background-color", "orange").css("color", "white");
+            cartCount.addClass("progress-bar-danger")
+                     .css("color", "#fff");
         }
     };
 

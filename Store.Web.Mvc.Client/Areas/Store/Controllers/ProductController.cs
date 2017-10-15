@@ -2,20 +2,28 @@
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
+using Store.Data.Contracts;
 using Store.DomainModel.DTOs;
+using Store.Model.POCO_Entities;
 using Store.Web.Mvc.Client.Controllers;
 
 namespace Store.Web.Mvc.Client.Areas.Store.Controllers
 {
     public class ProductController : BaseControllerStore
     {
+        public ProductController(IStoreUow uow)
+        {
+            Uow = uow;
+        }
+
         [ChildActionOnly]
         public ActionResult TopDiscountProducts(int count = 15)
         {
-            var products = Context.Products
-                .Where(p => p.productDiscount > 0)
-                .OrderByDescending(p => p.productDiscount)
+            var products = Uow.Products
+                .GetAll()
+                .Where(p => p.ProductDiscount > 0)
                 .Take(count)
+                .OrderByDescending(p => p.ProductDiscount)
                 .ToList();
 
             var productDtos = Mapper.Map<IEnumerable<ProductDetailsDto>>(products);
@@ -26,9 +34,10 @@ namespace Store.Web.Mvc.Client.Areas.Store.Controllers
         [ChildActionOnly]
         public ActionResult MostPopularProducts(int count = 20)
         {
-            var products = Context.Products
-                .OrderByDescending(p => p.productOrderCount)
+            var products = Uow.Products
+                .GetAll()
                 .Take(count)
+                .OrderByDescending(p => p.ProductOrderCount)
                 .ToList();
 
             var productDtos = Mapper.Map<IEnumerable<ProductDetailsDto>>(products);
@@ -57,10 +66,7 @@ namespace Store.Web.Mvc.Client.Areas.Store.Controllers
 
         public ActionResult Product(int id)
         {
-            Product product = Context.Products
-                .Where(p => p.productId == id)
-                .ToList()
-                .FirstOrDefault();
+            Product product = Uow.Products.GetById(id);
 
             if (product == null)
             {

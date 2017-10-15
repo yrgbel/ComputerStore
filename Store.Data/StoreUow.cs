@@ -45,6 +45,8 @@ namespace Store.Data
         public IRepository<ProductSubCategory> ProductSubCategories => GetStandardRepo<ProductSubCategory>();
         public IRepository<CustomerPhone> CustomerPhones => GetStandardRepo<CustomerPhone>();
         public IRepository<Customer> Customers => GetStandardRepo<Customer>();
+        public IRepository<Cart> Carts => GetStandardRepo<Cart>();
+        public IRepository<CartItem> CartItems => GetStandardRepo<CartItem>();
 
         //public IRepository<TimeSlot> TimeSlots { get { return GetStandardRepo<TimeSlot>(); } }
         //public IRepository<Track> Tracks { get { return GetStandardRepo<Track>(); } }

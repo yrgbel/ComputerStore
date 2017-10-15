@@ -246,8 +246,19 @@ img.img_product:hover {
 }
 .cart_icon {
   margin-left: 5px;
-  margin-right: 5px;
+  margin-right: 15px;
 }
 .badge_count_product {
   margin-top: -0.5em;
+}
+.cart_btn {
+  margin-left: 5px;
+  margin-top: 0;
+}
+.alert-add-cart {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  display: none;
 }

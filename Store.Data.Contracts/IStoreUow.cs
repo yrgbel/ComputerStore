@@ -22,6 +22,8 @@ namespace Store.Data.Contracts
         IRepository<ProductManufacturer> ProductManufacturers { get; }
         IRepository<Product> Products { get; }
         IRepository<ProductSubCategory> ProductSubCategories { get; }
+        IRepository<Cart> Carts { get; }
+        IRepository<CartItem> CartItems { get; }
         //ISessionsRepository Sessions { get; }
         //IRepository<TimeSlot> TimeSlots { get; }
         //IRepository<Track> Tracks { get; }

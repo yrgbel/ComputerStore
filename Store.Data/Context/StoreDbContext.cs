@@ -10,8 +10,10 @@
 // TargetFrameworkVersion = 4.6
 
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Store.Data.Context;
+using Store.Data.EntityTypeConfigurations;
 using Store.Model.IdentityEntities;
 using Store.Model.POCO_Entities;
 
@@ -32,6 +34,8 @@ namespace Store.Data
         public System.Data.Entity.DbSet<ProductCategory> ProductCategories { get; set; } // ProductCategory
         public System.Data.Entity.DbSet<ProductManufacturer> ProductManufacturers { get; set; } // ProductManufacturer
         public System.Data.Entity.DbSet<ProductSubCategory> ProductSubCategories { get; set; } // ProductSubCategory
+        public System.Data.Entity.DbSet<Cart> Carts { get; set; } // Cart
+        public System.Data.Entity.DbSet<CartItem> CartItems { get; set; } // CartItem
 
         static StoreDbContext()
         {
@@ -86,6 +90,8 @@ namespace Store.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
             // one-to-zero or one relationship between ApplicationUser and Customer
             // UserId column in Customers table will be foreign key
             modelBuilder.Entity<ApplicationUser>()
@@ -102,11 +108,12 @@ namespace Store.Data
             modelBuilder.Configurations.Add(new ProductCategoryConfiguration());
             modelBuilder.Configurations.Add(new ProductManufacturerConfiguration());
             modelBuilder.Configurations.Add(new ProductSubCategoryConfiguration());
+            modelBuilder.Configurations.Add(new CartConfigurations());
+            modelBuilder.Configurations.Add(new CartItemConfigurations());
         }
 
         public static System.Data.Entity.DbModelBuilder CreateModel(System.Data.Entity.DbModelBuilder modelBuilder, string schema)
         {
-            //modelBuilder.Configurations.Add(new ApplicationUserConfiguration(schema));
             modelBuilder.Configurations.Add(new CusomerPhoneConfiguration(schema));
             modelBuilder.Configurations.Add(new CustomerConfiguration(schema));
             modelBuilder.Configurations.Add(new OrderDetailConfiguration(schema));
@@ -116,6 +123,9 @@ namespace Store.Data
             modelBuilder.Configurations.Add(new ProductCategoryConfiguration(schema));
             modelBuilder.Configurations.Add(new ProductManufacturerConfiguration(schema));
             modelBuilder.Configurations.Add(new ProductSubCategoryConfiguration(schema));
+            modelBuilder.Configurations.Add(new CartConfigurations());
+            modelBuilder.Configurations.Add(new CartItemConfigurations());
+
             return modelBuilder;
         }
     }

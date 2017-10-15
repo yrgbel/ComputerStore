@@ -3,7 +3,6 @@ using System.Web.Http;
 using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
 using Store.DomainModel.DTOs;
-using Store.Model.POCO_Entities;
 
 namespace Store.Web.Mvc.Client
 {
@@ -19,6 +18,8 @@ namespace Store.Web.Mvc.Client
 
             builder.EntitySet<ProductDetailsDto>("Products").EntityType.Name = "Product";
             builder.EntitySet<ProductBrandDto>("ProductBrands").EntityType.Name = "ProductBrand";
+            builder.EntitySet<CartDto>("Carts").EntityType.Name = "Cart";
+            builder.EntitySet<CartItemDto>("CartItems").EntityType.Name = "CartItem";
 
             //config.Select().Expand().Filter().OrderBy().MaxTop(null).Count();
             config.MapODataServiceRoute(

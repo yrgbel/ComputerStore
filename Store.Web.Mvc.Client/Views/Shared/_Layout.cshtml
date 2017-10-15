@@ -28,7 +28,11 @@
                         <button class="navbar-toggle collapsed menu_btn" data-toggle="collapse" data-target="#top_menu">
                             <span class="glyphicon glyphicon-menu-hamburger"></span>
                         </button>
-
+                        <button class="navbar-toggle collapsed cart_btn" data-toggle="collapse" data-target="#top_menu">
+                            <div id="cartBlockBeforeMenu">
+                                <span>Cart</span><span class="glyphicon glyphicon-shopping-cart cart_icon"><span class="badge progress-bar-danger badge_count_product"></span></span>
+                            </div>
+                        </button>
                         <a href="/" class="navbar-brand logo">
                             <img src="~/Content/images/logo.png" id="logo" alt="logo">
                         </a>
@@ -54,8 +58,8 @@
                             <li class="nav-divider" />
                             @Html.Partial("_Login")
                             <li class="nav-divider" />
-                            <li class="cart_style"><a href="#">YOUR CART:<span class="glyphicon glyphicon-shopping-cart cart_icon"></span><span class="badge progress-bar-danger badge_count_product">215</span></a></li>
-                            <li class="nav-divider" />                        
+                            <li class="cart_style"><a href="#">CART<span class="glyphicon glyphicon-shopping-cart cart_icon"></span><span id="cartcount" class="badge progress-bar-danger badge_count_product"></span></a></li>
+                            <li class="nav-divider" />
                         </ul>
                     </div>
                     <div class="search_panel">
@@ -90,9 +94,9 @@ When bundling, load in thisequence:
 -->
 
 @Scripts.Render(
-    "~/bundles/app",
     "~/bundles/jquery",
-    "~/bundles/jsextlibs"
+    "~/bundles/jsextlibs",
+    "~/bundles/app"
     )
 
 @RenderSection("Scripts", required: false)

@@ -54,6 +54,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityEntities\ApplicationUser.cs" />
+    <Compile Include="POCO_Entities\Cart.cs" />
+    <Compile Include="POCO_Entities\CartItem.cs" />
     <Compile Include="POCO_Entities\CustomerPhone.cs" />
     <Compile Include="POCO_Entities\Customer.cs" />
     <Compile Include="POCO_Entities\OrderDetail.cs" />

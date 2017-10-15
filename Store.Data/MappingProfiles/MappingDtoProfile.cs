@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq.Expressions;
-using AutoMapper;
+﻿using AutoMapper;
 using Store.DomainModel.DTOs;
 using Store.DomainModel.Helpers;
 using Store.Model.POCO_Entities;
@@ -40,6 +38,8 @@ namespace Store.Data.MappingProfiles
             CreateMap<ProductCategory, ProductCategoryDto>();
             CreateMap<ProductManufacturer, ProductManufacturerDto>();
             CreateMap<ProductSubCategory, ProductSubCategoryDto>();
+            CreateMap<Cart, CartDto>().ReverseMap();
+            CreateMap<CartItem, CartItemDto>().ReverseMap();
 
             // Dto to Domain
             CreateMap<CustomerPhoneDto, CustomerPhone>();
