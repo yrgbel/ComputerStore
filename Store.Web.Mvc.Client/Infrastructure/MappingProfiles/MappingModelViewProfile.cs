@@ -4,6 +4,7 @@ using AutoMapper;
 using Store.Model.IdentityEntities;
 using Store.Model.POCO_Entities;
 using Store.Web.Mvc.Client.Areas.Auth.ViewModels;
+using Store.Web.Mvc.Client.Areas.Store.Models;
 
 namespace Store.Web.Mvc.Client.Infrastructure.MappingProfiles
 {
@@ -32,6 +33,10 @@ namespace Store.Web.Mvc.Client.Infrastructure.MappingProfiles
                 .ForMember(u => u.ChangedOn, cfg => cfg.MapFrom(s => DateTime.Now))
                 .ForMember(u => u.SignupDate, cfg => cfg.MapFrom(s => DateTime.Now))
                 .ForMember(u => u.Customer, cfg => cfg.MapFrom(s => Mapper.Map<Customer>(s)));
+
+            CreateMap<Cart, CartModel>().ReverseMap();
+            CreateMap<CartItem, CartItemModel>().ReverseMap();
+
         }
     }
 }

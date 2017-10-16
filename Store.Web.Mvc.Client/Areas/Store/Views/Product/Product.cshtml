@@ -131,7 +131,7 @@
 {
     <script type="text/javascript">
 
-        $(function () {
+        $(function() {
             var slider = {};
 
             var countProductsList = $("#count")
@@ -142,7 +142,7 @@
             // Instantiate a slider
             slider = $("input.slider")
                 .bootstrapSlider()
-                .change(function (e) {
+                .change(function(e) {
                     countProductsList.val(slider.bootstrapSlider('getValue'));
                 });
 
@@ -156,9 +156,9 @@
                 var items = [];
 
                 //get image dimensions
-                productImages.each(function () {
+                productImages.each(function() {
                     items.push({ src: $(this).attr('src'), w: this.naturalWidth, h: this.naturalHeight });
-				});
+                });
 
                 // define options (if needed)
                 var options = {
@@ -175,7 +175,7 @@
                 gallery.init();
             };
 
-			document.getElementsByClassName('img_product')[0].onclick = openPhotoSwipe;
+            document.getElementsByClassName('img_product')[0].onclick = openPhotoSwipe;
         });
 
         // see "Pro JavaScript and jQuery Patterns" package for details
@@ -183,49 +183,64 @@
         // ** namespace pattern
         // ** revealing module pattern
         // ** singleton pattern
-        Patterns.namespace("Store").Product = (function () {
+        Patterns.namespace("Store").Product = (function() {
 
             var utils = Patterns.Store.Utils;
             var app = Patterns.Store.App;
 
             var addToCart = function(event) {
 
-                @*var isUserAuthorized = @User.Identity.IsAuthenticated.ToString().ToLower();
-
-                if (!isUserAuthorized) {
-                    $("#cart-alert").html("Add item to cart can only registered users.")
-                        .removeClass("").addClass("").fadeIn(500).delay(4500).fadeOut(2000);
-                    return utils.stopEvent(event);
-                }*@
-
                 // display success message
-                var count = parseInt($("#cartcount").text(), 10);
+                var count = parseInt($("#count").val(), 10);
+
                 var items = count > 1 ? " items" : " item";
                 $("#cart-alert").html("Added " + count + items + " to your cart.")
                     .fadeIn(500).delay(2500).fadeOut(2000);
 
                 // refreshes cart display at top
-                app.updateCartOnPage(1);
+                app.updateCartOnPage(count);
 
                 var $form = $(this);
 
                 var options = {
-                    url: "/store/cart",
+                    url: "/cart",
                     type: "POST",
-                    data: $form.serialize()
+                    data: $form.serialize(),
+                    error: function(jqXhr, exception) {
+                        var msg = '';
+                        if (jqXhr.status === 0) {
+                            msg = 'Not connect.\n Verify Network.';
+                        } else if (jqXhr.status === 404) {
+                            msg = 'Requested page not found. [404]';
+                        } else if (jqXhr.status === 500) {
+                            msg = 'Internal Server Error [500].';
+                        } else if (exception === 'parsererror') {
+                            msg = 'Requested JSON parse failed.';
+                        } else if (exception === 'timeout') {
+                            msg = 'Time out error.';
+                        } else if (exception === 'abort') {
+                            msg = 'Ajax request aborted.';
+                        } else {
+                            msg = 'Uncaught Error.\n' + jqXhr.responseText;
+                        }
+                        alert(msg);
+                    },
+                    succes: function() {
+                        alert("Succeeded!");
+                    }
                 };
 
-                 //** fire and forget -- CQRS pattern
+                //** fire and forget -- CQRS pattern
                 $.ajax(options);
 
                 return utils.stopEvent(event);
             }
 
-            var activateControls = function () {
+            var activateControls = function() {
                 $("form").submit(addToCart);
             };
 
-            var start = function () {
+            var start = function() {
                 activateControls();
             };
 
@@ -234,7 +249,7 @@
         })();
 
 
-        $(function () {
+        $(function() {
 
             // ** facade pattern
             product = Patterns.Store.Product;

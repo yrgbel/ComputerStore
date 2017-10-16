@@ -45,7 +45,14 @@ Patterns.namespace("Store").App = (function () {
         //update cart display
 
         var cartCount = $("#cartcount");
-        var count = parseInt(cartCount.text(), 10) + delta;
+        var currentCount = parseInt(cartCount.text(), 10);
+
+        if (isNaN(currentCount)) {
+            currentCount = 0;
+        }
+
+        var count = currentCount + delta;
+
         if (count < 0) count = 0;
 
         cartCount.text(count);

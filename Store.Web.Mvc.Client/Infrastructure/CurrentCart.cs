@@ -32,5 +32,7 @@ namespace Store.Web.Mvc.Client.Infrastructure
                 HttpContext.Current.Response.Cookies.Add(cookie);
             }
         }
+
+        public static string ItemCountForDisplay => ItemCount > 0 ? ItemCount.ToString() : "";
     }
 }

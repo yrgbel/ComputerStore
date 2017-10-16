@@ -211,6 +211,7 @@
     <Content Include="bower_components\photoswipe\src\css\default-skin\default-skin.scss" />
     <Content Include="bower_components\photoswipe\src\css\main.scss" />
     <Content Include="bower_components\photoswipe\src\css\_main-settings.scss" />
+    <Content Include="Areas\Store\Views\Cart\Cart.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -357,6 +358,8 @@
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
     <Compile Include="Areas\Store\Controllers\CartController.cs" />
     <Compile Include="Areas\Store\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Store\Models\CartItemModel.cs" />
+    <Compile Include="Areas\Store\Models\CartModel.cs" />
     <Compile Include="Areas\Store\StoreAreaRegistration.cs" />
     <Compile Include="Connected Services\ImageServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -411,7 +414,6 @@
     <Folder Include="Areas\Auth\Views\Shared\" />
     <Folder Include="Areas\Home\Models\" />
     <Folder Include="Areas\Home\Views\Shared\" />
-    <Folder Include="Areas\Store\Models\" />
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
