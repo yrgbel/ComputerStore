@@ -84,11 +84,6 @@
                         <input type="hidden" name="id" id="id" value="@Model.ProductId" />
                         <table>
                             <tr>
-                                <td colspan="2">
-                                    <div id="cart-alert" class="alert alert-success alert-add-cart"></div>
-                                </td>
-                            </tr>
-                            <tr>
                                 <td>Price:</td>
                                 <td><span class="price_product">@Math.Round(Model.ProductPrice, 2)$</span></td>
                             </tr>
@@ -118,6 +113,11 @@
                                             <option>@i</option>
                                         }
                                     </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div id="cart-alert" class="alert alert-success alert-add-cart"></div>
                                 </td>
                             </tr>
                         </table>
@@ -194,7 +194,7 @@
                 var count = parseInt($("#count").val(), 10);
 
                 var items = count > 1 ? " items" : " item";
-                $("#cart-alert").html("Added " + count + items + " to your cart.")
+                $("#cart-alert").html("Added " + count + items + "</br>to your cart.")
                     .fadeIn(500).delay(2500).fadeOut(2000);
 
                 // refreshes cart display at top

@@ -9,6 +9,7 @@
 
         public decimal SubTotal { get; set; }
         public string ProductImageLargeUrl { get; set; }
+        public string ProductImageThumbnailUrl { get; set; }
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
     }

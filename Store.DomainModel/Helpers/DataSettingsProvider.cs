@@ -15,5 +15,10 @@ namespace Store.DomainModel.Helpers
         {
             return ImageService + "GetProductImageSmall/" + id;
         }
+
+        public static string GetProductImageThumbnailUrl(int id)
+        {
+            return ImageService + "GetProductImageThumbnail/" + id;
+        }
     }
 }

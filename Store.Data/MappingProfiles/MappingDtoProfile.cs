@@ -32,7 +32,9 @@ namespace Store.Data.MappingProfiles
                 .ForMember(dto => dto.ProductImageLargeUrl,
                 cfg => cfg.MapFrom(dest => DataSettingsProvider.GetProductImageLargeUrl(dest.ProductId)))
                 .ForMember(dto => dto.ProductImageSmallUrl,
-                cfg => cfg.MapFrom(dest => DataSettingsProvider.GetProductImageSmallUrl(dest.ProductId)));
+                cfg => cfg.MapFrom(dest => DataSettingsProvider.GetProductImageSmallUrl(dest.ProductId)))
+                .ForMember(dto => dto.ProductImageThumbnail,
+                    cfg => cfg.MapFrom(dest => DataSettingsProvider.GetProductImageThumbnailUrl(dest.ProductId)));
 
             CreateMap<ProductBrand, ProductBrandDto>();
             CreateMap<ProductCategory, ProductCategoryDto>();

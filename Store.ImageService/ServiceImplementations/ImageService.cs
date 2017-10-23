@@ -33,6 +33,11 @@ namespace Store.ImageService.ServiceImplementations
             return GetProductImage("Small", productId);
         }
 
+        public Stream GetProductImageThumbnail(string productId)
+        {
+            return GetProductImage("Thumbnail", productId);
+        }
+
         /// <summary>
         /// Helper methods. Gets large or small product image.
         /// </summary>

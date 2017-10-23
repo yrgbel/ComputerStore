@@ -79,6 +79,15 @@
     <Content Include="Images\Products\Small\104.jpg" />
     <Content Include="Images\Products\Small\103.jpg" />
     <Content Include="Images\Products\Small\105.jpg" />
+    <Content Include="Images\Products\Thumbnail\0.jpg" />
+    <Content Include="Images\Products\Thumbnail\101.jpg" />
+    <Content Include="Images\Products\Thumbnail\102.jpeg" />
+    <Content Include="Images\Products\Thumbnail\103.jpg" />
+    <Content Include="Images\Products\Thumbnail\104.jpg" />
+    <Content Include="Images\Products\Thumbnail\105.jpg" />
+    <Content Include="Images\Products\Thumbnail\106.jpg" />
+    <Content Include="Images\Products\Thumbnail\107.jpeg" />
+    <Content Include="Images\Products\Thumbnail\108.jpeg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

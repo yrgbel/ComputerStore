@@ -1,18 +1,118 @@
-﻿@{
+﻿@model Store.Web.Mvc.Client.Areas.Store.Models.CartModel
+
+@{
     ViewBag.Title = "Cart";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int count = 0;
 }
 
-<!DOCTYPE html>
+<section>
+    <div class="content_position">
+        <div class="container-fluid">
+        <div class="row">
+                <form method ="put">
+                    <input type="hidden" name="id" id="id" value="" />
+                    <input type="hidden" name="quantity" id="quantity" value="" />
+                </form>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
+                <table style="margin:20px 0 0 0px">
+                    <thead>
+                    <tr>
+                        <th colspan="2" style="background-color: #d9dee7; width: 480px; height: 28px;">Art Work</th>
+                        <th style="background-color: #d9dee7; width: 80px;">Unit Price</th>
+                        <th style="background-color: #d9dee7; width: 80px;">Quantity</th>
+                        <th style="background-color: #d9dee7; width: 80px;">Subtotal</th>
+                        <th style="background-color: #d9dee7; width: 80px;"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="6">&nbsp;</td>
+                    </tr>
+                    @foreach (var item in Model.Items)
+                    {
+                        count++;
+                            
+                        <tr id="row@(item.ProductId)">
+                                
+                                
+                            <td style="text-align: center; padding: 0px 5px; width: 95px;">
+                                <img src="@item.ProductImageThumbnailUrl" class="img-small" alt="">
+                            </td>
+                            <td style="vertical-align: top; padding: 0 0 0 5px; width: 300px;">
+                                <strong>@item.ProductName</strong><br />
+                            </td>
+                            <td style="text-align: center; font-weight:bold;">
+                                <span id="unitprice_@(item.ProductId)">@string.Format("{0:C0}", item.CartItemPrice)</span>
+                                <input type="hidden" id="hidden_unitprice_@(item.CartItemPrice)" value="@item.CartItemPrice" />
+                            </td>
+                            <td style="text-align: center;">
+                                <select name="quantity" style="width:60px;">
+                                    @for (int i = 1; i < Math.Max(6, item.CartItemQuantity + 1); i++)
+                                    {
+                                        if (item.CartItemQuantity == i)
+                                        {
+                                            <option selected>@i</option>
+                                        }
+                                        else
+                                        {
+                                            <option>@i</option>
+                                        }
+                                    }
+                                </select>
+                                <input type="hidden" id="hidden_quantity_@(item.ProductId)" value="@item.CartItemQuantity" />
+
+                            </td>
+                            <td style="text-align: center;font-weight:bold;">
+                                <span id="subtotal_@(item.ProductId)">@string.Format("{0:C0}", item.SubTotal)</span>
+                                <input type="hidden" id="hidden_subtotal_@(item.ProductId)" value="@item.SubTotal" />
+                            </td>
+                            <td style="text-align: center;">
+                                <a class="remove" href='javascript:void(0);'>Remove</a>
+                            </td>
+                        </tr>  
+                        <tr>
+                            <td colspan="6">
+                                <hr />
+                            </td>
+                        </tr>
+                    }
+
+                    @if (count == 0)
+                    {
+                        <tr>
+                            <td colspan="6" style="text-align:center; padding:40px; height:150px;color:#777;">
+                                <h4>There are no items in your cart</h4>
+                            </td>
+                        </tr>
+                    }
+
+                    </tbody>
+                </table>
+           
+            <div class="span3">
+                <div style="margin:20px 20px 0 0;padding:20px;background: #f5f5f5;">
+                    <a href="/products" class="btn btn-warning">Continue Shopping</a><br />
+                    <div id="grand" style="border-bottom:2px solid #ccc;margin-top:100px;">
+                        Grand Total: &nbsp;&nbsp;&nbsp;&nbsp;<span id="grandtotal" style="font-weight:bold;">@string.Format("{0:C0}", Model.GrandTotal)</span>
+                        <input type="hidden" id="hidden_grandtotal" value="@Model.GrandTotal" />
+                    </div>
+                    <br />
+                    <a id="checkout" href="/checkout" class="btn btn-warning" data-toggle="popover" data-placement="left" 
+                       @*@if (checkoutMessage != null)
+                       {
+                           @: data-content="@checkoutMessage"
+                       }*@
+                    >To Checkout &nbsp;<i class="icon-play icon-white"></i></a>
+                </div>
+            </div>
+
+
+
+        </div>
+
     </div>
-</body>
-</html>
+</div>
+
+    </section>
